@@ -1,10 +1,9 @@
-import { getVideos } from "./videos";
-// import { getDevBooks } from "./devBooks";
-import { getProdBooks } from "./prodBooks";
+import { getDevProducts } from "./devProducts";
+import { getProdProducts } from "./prodProducts";
 import { handleCheckout } from "./stripe-purchase";
 
 export default {
-  getProducts: getProdBooks,
-  getVideos: getVideos,
+  getProducts:
+    process.env.NODE_ENV === "production" ? getProdProducts : getDevProducts,
   buyProducts: handleCheckout,
 };

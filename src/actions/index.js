@@ -21,18 +21,6 @@ const receiveProducts = (products) => {
   };
 };
 
-const receiveVideos = (videos) => {
-  return {
-    type: types.RECEIVE_VIDEOS,
-    videos: videos ? videos : [],
-  };
-};
-
-export const fetchVideos = () => (dispatch) =>
-  shop.getVideos().then((videos) => {
-    dispatch(receiveVideos(videos));
-  });
-
 export const fetchProducts = () => (dispatch) =>
   shop.getProducts().then((products) => {
     dispatch(receiveProducts(products));

@@ -28,7 +28,6 @@ interface Shipping {
 
 interface State {
   products: Products;
-  videos: Videos;
   cart: Cart;
   shippingCosts: Shipping[];
   config: Config;
