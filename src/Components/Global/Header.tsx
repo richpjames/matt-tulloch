@@ -2,16 +2,8 @@ import React from "react";
 import styled from "styled-components/macro";
 import { Link } from "@reach/router";
 
-import BasketNav from "./BasketNav";
-
-import Logo from "./Logo";
-import { text } from "../../constants";
-
 const Nav = styled.nav`
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  border-bottom: 1px solid ${text};
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
   @media only screen and (min-width: 600px) {
@@ -22,47 +14,31 @@ const Nav = styled.nav`
 `;
 
 const NavLinks = styled.ul`
+  display: flex;
+  width: 100%;
   list-style: none;
-  text-align: right;
   padding-top: 2px;
   margin-top: 2.5vh;
-  display: inline;
-  @media only screen and (min-width: 600px) {
-    display: flex;
-  }
+  justify-content: space-between;
 `;
 const NavItem = styled.li`
-  display: flex;
-  justify-content: flex-end;
   height: 20px;
   padding-left: 1rem;
   padding-right: 1rem;
+  display: inline;
   @media only screen and (min-width: 600px) {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
 `;
 
-const Seperator = styled.span`
-  display: none;
-  @media only screen and (min-width: 600px) {
-    display: block;
-  }
-`;
-
 export const Header = () => {
   return (
     <Nav>
-      <Link to="/about">
-        <Logo />
-      </Link>
       <NavLinks>
         {navItems.map((navItem, index) => {
           return (
             <React.Fragment key={index}>
-              {index !== 0 && index <= navItems.length - 2 && (
-                <Seperator>{String.fromCharCode(8226)}</Seperator>
-              )}
               <NavItem key={index}>
                 <Link
                   to={navItem.link}
@@ -70,7 +46,6 @@ export const Header = () => {
                   className={navItem.className}
                 >
                   {navItem.content}
-                  {navItem.component}
                 </Link>
               </NavItem>
             </React.Fragment>
@@ -82,29 +57,23 @@ export const Header = () => {
 };
 
 const navItems = [
+  // {
+  //   link: "/shop",
+  //   ariaLabel: "Shop link",
+  //   content: "shop",
+  //   className: "shop",
+  // },
   {
-    link: "/books",
-    ariaLabel: "Books link",
-    content: "Books",
-    className: "books",
-  },
-  {
-    link: "/murmur-episode-one",
-    ariaLabel: "Video link",
-    content: "Murmur Reading Series",
-    className: "videos",
-  },
-  {
-    link: "/about",
-    ariaLabel: "About page",
-    content: "About",
-    className: "about",
+    link: "/contact",
+    ariaLabel: "contact page",
+    content: "contact",
+    className: "contact",
   },
   {
     link: "/basket",
     ariaLabel: "Basket link",
-    content: "",
-    component: <BasketNav />,
+    content: "basket",
+
     className: "basket",
   },
 ];
