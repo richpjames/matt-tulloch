@@ -2,25 +2,14 @@ interface Product {
   title: string;
   author: string;
   photos: number[];
-  blurb1: string;
-  blurb2: string;
+  blurb: string;
   price: string;
-  publishDate: string;
   imagePath: string;
   id: string;
   slug: string;
   inventory: number;
   path: string;
   thumbnail: string;
-}
-interface Video {
-  title: string;
-  creator: string;
-  description1: string;
-  description2: string;
-  url: string;
-  publishDate: string;
-  slug: string;
 }
 
 interface Cart {
@@ -37,10 +26,6 @@ interface Shipping {
   priceId: string;
 }
 
-interface Config {
-  showSlideshow: boolean;
-}
-
 interface State {
   products: Products;
   videos: Videos;
@@ -54,9 +39,6 @@ type visibileIds = string[];
 interface Products {
   byId: byId<Product>;
   visibleIds: visibileIds;
-}
-interface Videos extends Products {
-  byId: byId<Video>;
 }
 
 type Action =
@@ -73,6 +55,5 @@ type Action =
 type InitialState = {
   cart: Cart;
   products: { byId: {}; visibleIds: [] };
-  videos: { byId: {}; visibleIds: [] };
   shippingCosts: Shipping[];
 };
