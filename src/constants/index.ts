@@ -45,15 +45,9 @@ export const initialState: State = {
   config: { showSlideshow: true },
 };
 
-//COLOUR DEFINITIONS
-export const _offWhite = "#FAFAFA";
-export const _offOffWhite = "#ebebeb";
-export const _purp = "#02003D";
-export const _darkGrey = "#141414";
-
 //COLOUR USAGE
-export const text = "#ffffff";
-export const background = "#000000";
+export const text = "#37353a";
+export const background = "#fefefe";
 
 //URLS
 export const mainImageUrl = `https://www.monitorbooks.co.uk/img/`;
