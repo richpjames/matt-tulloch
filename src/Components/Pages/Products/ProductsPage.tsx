@@ -2,7 +2,7 @@ import React, { FunctionComponent } from "react";
 import { RouteComponentProps } from "@reach/router";
 import styled from "styled-components/macro";
 
-import { mainImageUrl, productsPageName } from "../../../constants";
+import { mainImageUrl } from "../../../constants";
 import {
   ListItemContainer,
   ListItemPhotoWrap,
@@ -15,8 +15,8 @@ import {
 import { PageTitle } from "../../Common/Titles";
 
 interface Props extends RouteComponentProps {
-  books: byId<Product>;
-  bookIds: visibileIds;
+  products: byId<Product>;
+  productIds: visibileIds;
 }
 
 const ListWrap = styled.section`
@@ -25,15 +25,18 @@ const ListWrap = styled.section`
   padding-top: 2.5rem;
 `;
 
-export const ProductsPage: FunctionComponent<Props> = ({ books, bookIds }) => {
-  const bookDetails = bookIds.map((bookId) => books[bookId]);
+export const ProductsPage: FunctionComponent<Props> = ({
+  products,
+  productIds,
+}) => {
+  const productDetails = productIds.map((productId) => products[productId]);
 
   return (
     <PageWrapper>
-      <PageTitle>Books</PageTitle>
+      <PageTitle>products</PageTitle>
       <ListWrap>
-        {bookDetails.map((book, index) => {
-          const { slug, title, author, thumbnail, imagePath } = book;
+        {productDetails.map((product, index) => {
+          const { slug, title, author, thumbnail, imagePath } = product;
           return (
             <ListItemContainer
               index={index}
@@ -42,7 +45,7 @@ export const ProductsPage: FunctionComponent<Props> = ({ books, bookIds }) => {
               horizontalMargin="0rem"
               topMargin="1rem"
               key={index}
-              to={`${productsPageName}/${slug}`}
+              to={slug}
             >
               <ListItemPhotoWrap width="30%">
                 <ListItemPhoto

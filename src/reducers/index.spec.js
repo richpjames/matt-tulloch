@@ -28,7 +28,6 @@ describe("selectors", () => {
             },
           },
         },
-        videos: [],
       };
       expect(getTotal(state)).toBe("27.93");
     });

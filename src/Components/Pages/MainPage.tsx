@@ -8,13 +8,9 @@ import BasketContainer from "./Basket/BasketContainer";
 import ProductPage from "./Products/ProductPage";
 import Footer from "../Global/Footer";
 import { Header } from "../Global/Header";
-import VideoPage from "./Videos/VideoPage";
 import OnRouteChange from "../Global/ScrollToTop";
 import { Success } from "./Success";
 import { ProductsPage } from "./Products/ProductsPage";
-import { VideosPage } from "./Videos/VideosPage";
-import { ProductsContainer } from "./Products/ProductsContainer";
-import { productsPageName } from "../../constants";
 
 const PageWrap = styled.div`
   margin-left: auto;
@@ -39,13 +35,12 @@ const MainPage = ({ products = {}, productIds = [] }: Props) => {
       <PageWrap>
         <Header />
         <Router>
-          <ProductsContainer path="/">
-            <ProductsPage bookIds={productIds} books={products} path="/" />
+          <ProductsPage path="/" default>
             {productIds.map((bookId) => {
               const { slug } = products[bookId];
               return <ProductPage id={bookId} path={slug} key={bookId} />;
             })}
-          </ProductsContainer>
+          </ProductsPage>
           <BasketContainer path="/basket" />
           <About path="/about" />
           <Success path="/success" />
