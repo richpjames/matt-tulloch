@@ -39,7 +39,7 @@ const MainPage = ({ products = {}, productIds = [] }: Props) => {
       <PageWrap>
         <Header />
         <Router>
-          <ProductsContainer path={productsPageName}>
+          <ProductsContainer path="/">
             <ProductsPage bookIds={productIds} books={products} path="/" />
             {productIds.map((bookId) => {
               const { slug } = products[bookId];
