@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import { connect } from "react-redux";
+import Logo from "../Global/Logo";
 
-import Footer from "../Global/Footer";
+const LogoWrap = styled.section`
+  align-self: center;
+`;
 
 interface Props {
   products?: byId<Product>;
@@ -13,7 +15,9 @@ interface Props {
 export const MainPage = ({ products = {}, productIds = [] }: Props) => {
   return (
     <>
-      <Footer />
+      <LogoWrap>
+        <Logo />
+      </LogoWrap>
     </>
   );
 };

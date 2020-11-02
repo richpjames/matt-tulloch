@@ -18,6 +18,8 @@ const PageWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 100vw;
+  display: flex;
+  flex-direction: column;
   @media only screen and (min-width: 600px) {
     width: 60%;
   }
