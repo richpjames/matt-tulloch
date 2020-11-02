@@ -14,9 +14,7 @@ import {
 import { LoadingSpinner } from "./LoadingSpinner";
 import { SplitText, Text, ErrorText } from "./Text";
 import { ProductTitle } from "./ProductTitle";
-import { VideoTitle } from "./VideoTitle";
 import { PageSubtitle, PageTitle, PageTitleBold, TitleWrapper } from "./Titles";
-import { Video } from "./Video";
 
 export {
   AddToBasketButton,
@@ -39,7 +37,5 @@ export {
   SplitText,
   Text,
   ProductTitle,
-  VideoTitle,
   TitleWrapper,
-  Video,
 };

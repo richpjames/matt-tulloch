@@ -35,7 +35,6 @@ interface Props {
   quantity: number;
   removeFromBasket: (id: string, quantityToReplace: number) => void;
   stock: number;
-  subtitle: string;
   title: string;
   slug: string;
 }
@@ -49,7 +48,6 @@ const BasketListItem = ({
   quantity,
   removeFromBasket,
   stock,
-  subtitle,
   title,
   slug,
 }: Props) => {
@@ -60,14 +58,14 @@ const BasketListItem = ({
       width="100%"
       horizontalMargin="5rem"
       topMargin="2rem"
-      className={subtitle}
+      className={title}
     >
       <ListItemPhotoWrap width="40%" onClick={() => navigate(slug)}>
         <ListItemPhoto src={imageSrc} />
       </ListItemPhotoWrap>
       <MetaInfoContainer index={index} width="40%">
         <ListItemTitle>{title}</ListItemTitle>
-        <ListItemSubtitle>{subtitle}</ListItemSubtitle>
+        <ListItemSubtitle>""</ListItemSubtitle>
         <QuantityPanel
           addToCart={() => addToBasket(id)}
           decrementInCart={() => decrementInCart(id)}

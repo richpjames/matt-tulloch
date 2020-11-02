@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from "react";
+import { connect } from "react-redux";
 import { RouteComponentProps } from "@reach/router";
 import styled from "styled-components/macro";
 
@@ -25,10 +26,7 @@ const ListWrap = styled.section`
   padding-top: 2.5rem;
 `;
 
-export const ProductsPage: FunctionComponent<Props> = ({
-  products,
-  productIds,
-}) => {
+const ProductsPage: FunctionComponent<Props> = ({ products, productIds }) => {
   const productDetails = productIds.map((productId) => products[productId]);
 
   return (
@@ -36,7 +34,7 @@ export const ProductsPage: FunctionComponent<Props> = ({
       <PageTitle>products</PageTitle>
       <ListWrap>
         {productDetails.map((product, index) => {
-          const { slug, title, author, thumbnail, imagePath } = product;
+          const { slug, title, thumbnail } = product;
           return (
             <ListItemContainer
               index={index}
@@ -49,12 +47,11 @@ export const ProductsPage: FunctionComponent<Props> = ({
             >
               <ListItemPhotoWrap width="30%">
                 <ListItemPhoto
-                  src={`${mainImageUrl}${imagePath}/thumbnails/${thumbnail}`}
+                  src={`${mainImageUrl}${slug}/thumbnails/${thumbnail}`}
                 />
               </ListItemPhotoWrap>
               <MetaInfoContainer index={index} width="40%">
                 <ListItemTitle>{title}</ListItemTitle>
-                <ListItemSubtitle>{author}</ListItemSubtitle>
               </MetaInfoContainer>
             </ListItemContainer>
           );
@@ -63,3 +60,11 @@ export const ProductsPage: FunctionComponent<Props> = ({
     </PageWrapper>
   );
 };
+const mapStateToProps = (state: State) => {
+  const { products } = state;
+  return {
+    productIds: products.visibleIds,
+    products: products.byId,
+  };
+};
+export default connect(mapStateToProps)(ProductsPage);

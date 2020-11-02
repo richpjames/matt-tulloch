@@ -37,7 +37,7 @@ export const Photos = (props: IProps) => {
 
   const thumbURL = `${mainURL}thumbnails/`;
 
-  const photoNumbers = photos;
+  const photoNumbers = photos ? photos : [];
 
   const imageURLs = photoNumbers.map((photo) => `${mainURL}${photo}.jpg`);
   const thumbURLs = photoNumbers.map((photo) => `${thumbURL}${photo}.jpg`);

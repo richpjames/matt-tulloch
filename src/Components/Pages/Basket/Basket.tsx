@@ -38,12 +38,11 @@ const Basket = ({
 }: IProps): React.ReactElement => {
   const basketItems = productIds.map((productId: string, index: number) => (
     <BasketListItem
-      title={productsById[productId].author}
-      subtitle={productsById[productId].title}
+      title={productsById[productId].title}
       price={productsById[productId].price}
       quantity={quantityById[productId]}
       id={productId}
-      imageSrc={`${mainImageUrl}${productsById[productId].imagePath}/thumbnails/${productsById[productId].thumbnail}`}
+      imageSrc={`${mainImageUrl}${productsById[productId].slug}/thumbnails/${productsById[productId].thumbnail}`}
       stock={productsById[productId].inventory}
       key={productsById[productId].id}
       index={index}

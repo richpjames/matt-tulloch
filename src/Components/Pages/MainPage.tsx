@@ -10,7 +10,8 @@ import Footer from "../Global/Footer";
 import { Header } from "../Global/Header";
 import OnRouteChange from "../Global/ScrollToTop";
 import { Success } from "./Success";
-import { ProductsPage } from "./Products/ProductsPage";
+import ProductsPage from "./Products/ProductsPage";
+import { ProductsContainer } from "./Products/ProductsContainer";
 
 const PageWrap = styled.div`
   margin-left: auto;
@@ -35,12 +36,21 @@ const MainPage = ({ products = {}, productIds = [] }: Props) => {
       <PageWrap>
         <Header />
         <Router>
-          <ProductsPage path="/" default>
-            {productIds.map((bookId) => {
-              const { slug } = products[bookId];
-              return <ProductPage id={bookId} path={slug} key={bookId} />;
+          <ProductsContainer path="/" default>
+            <ProductsPage path="/wow" />
+            {productIds.map((productId) => {
+              const { slug } = products[productId];
+              return (
+                <ProductPage
+                  description=""
+                  imagePath=""
+                  id={productId}
+                  path={slug}
+                  key={productId}
+                />
+              );
             })}
-          </ProductsPage>
+          </ProductsContainer>
           <BasketContainer path="/basket" />
           <About path="/about" />
           <Success path="/success" />

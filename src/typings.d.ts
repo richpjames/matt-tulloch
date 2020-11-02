@@ -1,10 +1,7 @@
 interface Product {
   title: string;
-  author: string;
-  photos: number[];
   blurb: string;
   price: string;
-  imagePath: string;
   id: string;
   slug: string;
   inventory: number;
@@ -30,7 +27,6 @@ interface State {
   products: Products;
   cart: Cart;
   shippingCosts: Shipping[];
-  config: Config;
 }
 
 type byId<T> = { [id: string]: T };

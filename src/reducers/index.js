@@ -2,13 +2,11 @@ import { combineReducers } from "redux";
 import { shippingCosts } from "../constants";
 import cart, * as fromCart from "./cart";
 import products, * as fromProducts from "./products";
-import { slideshow as config } from "./config";
 
 export default combineReducers({
   cart,
   products,
   shippingCosts: (state = shippingCosts) => state,
-  config,
 });
 
 const getAddedIds = (state) => fromCart.getAddedIds(state.cart);
