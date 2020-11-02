@@ -41,8 +41,6 @@ export const initialState: State = {
   },
   shippingCosts: shippingCosts,
   products: { byId: {}, visibleIds: [] },
-  videos: { byId: {}, visibleIds: [] },
-  config: { showSlideshow: true },
 };
 
 //COLOUR USAGE
@@ -51,8 +49,6 @@ export const background = "#fefefe";
 
 //URLS
 export const mainImageUrl = `https://www.monitorbooks.co.uk/img/`;
-export const homePage = "propositions";
-export const productsPageName = "books";
 
 //IMAGES
 export const productPageImageHeight = "15vw";
