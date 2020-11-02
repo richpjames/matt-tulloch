@@ -16,56 +16,36 @@ import { VideosPage } from "./Videos/VideosPage";
 import { ProductsContainer } from "./Products/ProductsContainer";
 import { productsPageName } from "../../constants";
 
-const PageWrap = styled.div<{ hide: boolean }>`
+const PageWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
   max-width: 100vw;
-  width: 95%;
-  display: ${(props) => (props.hide ? "none" : "block")};
   @media only screen and (min-width: 600px) {
     width: 60%;
   }
   @media only screen and (min-width: 400px) {
-    width: 80%;
+    width: 100%;
   }
 `;
 
 interface Props {
-  books?: byId<Product>;
-  videos?: byId<Video>;
-  bookIds?: visibileIds;
-  videoIds?: visibileIds;
-  hide: boolean;
+  products?: byId<Product>;
+  productIds?: visibileIds;
 }
 
-const MainPage = ({
-  books = {},
-  bookIds = [],
-  videos = {},
-  videoIds = [],
-  hide,
-}: Props) => {
+const MainPage = ({ products = {}, productIds = [] }: Props) => {
   return (
     <>
-      <PageWrap hide={hide}>
+      <PageWrap>
         <Header />
         <Router>
-          <ProductPage id="9T65B28LLM2MD" path="/" default />
           <ProductsContainer path={productsPageName}>
-            <ProductsPage bookIds={bookIds} books={books} path="/" />
-            {bookIds.map((bookId) => {
-              const { slug } = books[bookId];
+            <ProductsPage bookIds={productIds} books={products} path="/" />
+            {productIds.map((bookId) => {
+              const { slug } = products[bookId];
               return <ProductPage id={bookId} path={slug} key={bookId} />;
             })}
           </ProductsContainer>
-          <VideosPage path="videos" />
-          {videoIds.map((videoId) => (
-            <VideoPage
-              path={videos[videoId].slug}
-              video={videos[videoId]}
-              key={videoId}
-            />
-          ))}
           <BasketContainer path="/basket" />
           <About path="/about" />
           <Success path="/success" />
@@ -79,13 +59,10 @@ const MainPage = ({
 };
 
 const mapStateToProps = (state: State) => {
-  const { products, videos, config } = state;
+  const { products } = state;
   return {
-    bookIds: products.visibleIds,
-    books: products.byId,
-    videoIds: videos.visibleIds,
-    videos: videos.byId,
-    showSlideshow: config.showSlideshow,
+    productIds: products.visibleIds,
+    products: products.byId,
   };
 };
 
