@@ -7,7 +7,7 @@ const Nav = styled.nav`
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
   @media only screen and (min-width: 600px) {
-    margin-top: 5vh;
+    margin-top: 2.5vh;
     margin-left: 2.5rem;
     margin-right: 2.5rem;
   }

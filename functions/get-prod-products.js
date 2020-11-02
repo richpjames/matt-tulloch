@@ -1,4 +1,4 @@
-const prodProducts = require("./data/prod/books.json");
+const prodProducts = require("./data/prod-products.json");
 
 exports.handler = async () => {
   console.log("get prod books");

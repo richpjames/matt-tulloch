@@ -11,12 +11,10 @@ const OnRouteChangeWorker = ({ location, action }) => {
   return null;
 };
 
-const OnRouteChange = ({ action }) => (
+export const OnRouteChange = ({ action }) => (
   <Location>
     {({ location }) => {
       return <OnRouteChangeWorker location={location} action={action} />;
     }}
   </Location>
 );
-
-export default OnRouteChange;
