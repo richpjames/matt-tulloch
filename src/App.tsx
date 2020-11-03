@@ -20,12 +20,6 @@ const PageWrap = styled.div`
   max-width: 100vw;
   display: flex;
   flex-direction: column;
-  @media only screen and (min-width: 600px) {
-    width: 60%;
-  }
-  @media only screen and (min-width: 400px) {
-    width: 100%;
-  }
 `;
 
 interface Props {
@@ -43,7 +37,8 @@ const App = ({ fetchProducts, products = {}, productIds = [] }: Props) => {
     <PageWrap>
       <Header />
       <Router>
-        <ProductsContainer path="/" default>
+        <MainPage path="/" />
+        <ProductsContainer path="art" default>
           {productIds.map((productId) => {
             const { slug } = products[productId];
             return (
@@ -62,7 +57,6 @@ const App = ({ fetchProducts, products = {}, productIds = [] }: Props) => {
       </Router>
       {/* this prevents the page from opening at the centre */}
       <OnRouteChange action={() => window.scrollTo(0, 0)} />
-      <MainPage />
     </PageWrap>
   );
 };
