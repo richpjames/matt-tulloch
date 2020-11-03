@@ -5,15 +5,15 @@ import { RouteComponentProps } from "@reach/router";
 import styled from "styled-components/macro";
 
 import {
-  AddToBasketButton,
+  // AddToBasketButton,
   Photos,
   ProductTitle,
-  SplitText,
+  // SplitText,
   PageWrapper,
   InfoSection,
 } from "../../Common";
 import {
-  text,
+  // text,
   productPageImageHeight,
   productPageImageWidth,
 } from "../../../constants";
