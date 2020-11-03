@@ -2,7 +2,6 @@ import styled from "styled-components/macro";
 import { text } from "../../constants";
 
 export const PageWrapper = styled.div`
-  padding: 2.5rem;
   max-width: 100%;
   width: 100%;
   display: flex;
