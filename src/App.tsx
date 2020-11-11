@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components/macro";
 import { Router } from "@reach/router";
 
-import { MainPage } from "./pages";
+import { MainPage } from "./Components/Pages/MainPage";
 import { Header } from "./Components/Global/Header";
 import BasketContainer from "./Components/Pages/Basket/BasketContainer";
 import { ProductsContainer } from "./Components/Pages/Products/ProductsContainer";
