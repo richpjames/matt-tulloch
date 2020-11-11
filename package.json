@@ -20,15 +20,23 @@
     "@types/styled-components": "^5.1.0",
     "cross-fetch": "^3.0.6",
     "dompurify": "^2.1.1",
+    "gatsby": "^2.25.3",
+    "gatsby-plugin-react-helmet": "^3.3.14",
+    "gatsby-plugin-react-redux": "^1.1.0",
+    "gatsby-plugin-sharp": "^2.7.1",
+    "gatsby-plugin-styled-components": "^3.3.14",
+    "gatsby-source-filesystem": "^2.4.2",
+    "gatsby-transformer-json": "^2.4.15",
+    "gatsby-transformer-sharp": "^2.5.21",
     "grommet-icons": "^4.4.0",
     "jshint": "^2.11.1",
     "react": "^16.13.1",
     "react-animations": "^1.0.0",
     "react-dom": "^16.13.1",
+    "react-helmet": "^6.1.0",
     "react-image-lightbox": "^5.1.1",
     "react-native-fast-image": "^7.0.2",
     "react-redux": "^7.2.0",
-    "react-scripts": "^3.4.4",
     "react-visibility-sensor": "^5.1.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
@@ -40,14 +48,11 @@
     "typescript": "^3.9.5"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "buildDev": "NODE_ENV=development react-scripts build",
-    "buildProd": "NODE_ENV=production react-scripts build",
+    "dev": "gatsby develop -p 8888",
+    "build": "gatsby build ",
+    "serve": "gatsby serve",
     "functions": "cd functions && npm i && cd ..",
-    "dev": "netlify dev",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "cypress": "npx cypress run",
-    "eject": "react-scripts eject"
+    "cypress": "npx cypress run"
   },
   "eslintConfig": {
     "extends": [
