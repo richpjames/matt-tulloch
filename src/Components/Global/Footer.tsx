@@ -8,8 +8,6 @@ const FooterWrap = styled.section`
   margin-top: 5%;
 `;
 
-const Footer = () => {
+export const Footer = () => {
   return <FooterWrap className="FooterWrap" />;
 };
-
-export default Footer;
