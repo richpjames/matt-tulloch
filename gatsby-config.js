@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "Tulltulloch Int.",
+    title: "TULLTULLOCH INT.",
     description: "A site for Tulltulloch International",
   },
   plugins: [
