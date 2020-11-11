@@ -1,22 +1,38 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { useStaticQuery, graphql } from "gatsby";
+import { text } from "../../../constants";
 
 const GridWrapper = styled.div`
   display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  padding-top: 2rem;
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const GridItem = styled.div`
-  height: 10rem;
+  height: 15rem;
+  width: 15rem;
+  border: 5px solid ${text};
 `;
 
 export const ProductGrid = () => {
-  const products = [1, 2, 3, 4, 5, 6];
+  const { allProductsJson } = useStaticQuery(graphql`
+    query {
+      allProductsJson {
+        nodes {
+          slug
+        }
+      }
+    }
+  `);
   return (
     <GridWrapper>
-      {products.map((product) => (
-        <GridItem>{product}</GridItem>
+      {allProductsJson.nodes.map((product: { slug: string }) => (
+        <GridItem>{product.slug}</GridItem>
       ))}
     </GridWrapper>
   );

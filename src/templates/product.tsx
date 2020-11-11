@@ -9,12 +9,9 @@ import {
   PageWrapper,
   InfoSection,
 } from "../Components/Common";
-import {
-  text,
-  productPageImageHeight,
-  productPageImageWidth,
-} from "../constants";
+
 import BigLogo from "../Components/Global/BigLogo";
+import CartProvider from "../Components/Pages/Basket/BasketProvider";
 
 const LogoWrap = styled.section`
   align-self: center;
@@ -58,20 +55,22 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
   } = data.productsJson;
   return (
     <Layout>
-      <LogoWrap>
-        <BigLogo />
-      </LogoWrap>
-      <h2>{title}</h2>
-      <InfoSection>
-        <Text
-          text={blurb}
-          // addToBasketButton={
-          //   <AddToBasketButton id={id} borderColour={text} linkTo={slug} />
-          // }
-        />
-        <p>{dimensions}</p>
-        <p>£{price}</p>
-      </InfoSection>
+      <CartProvider>
+        <LogoWrap>
+          <BigLogo />
+        </LogoWrap>
+        <h2>{title}</h2>
+        <InfoSection>
+          <Text
+            text={blurb}
+            // addToBasketButton={
+            //   <AddToBasketButton id={id} borderColour={text} linkTo={slug} />
+            // }
+          />
+          <p>{dimensions}</p>
+          <p>£{price}</p>
+        </InfoSection>
+      </CartProvider>
     </Layout>
   );
 };
