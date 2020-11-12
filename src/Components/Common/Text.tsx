@@ -59,7 +59,7 @@ export const SplitText = (props: Props) => {
 };
 
 export const Text: React.FC<{ text: string; colour?: string }> = ({ text }) => (
-  <TextWrapper dangerouslySetInnerHTML={{ __html: sanitize(text) }} />
+  <TextWrapper>{text}</TextWrapper>
 );
 
 export const ErrorText: React.FC<{ text: string }> = ({ text }) => (
