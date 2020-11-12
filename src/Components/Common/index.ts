@@ -12,6 +12,7 @@ import {
 import { LoadingSpinner } from "./LoadingSpinner";
 import { SplitText, Text, ErrorText } from "./Text";
 import { PageSubtitle, PageTitle, PageTitleBold, TitleWrapper } from "./Titles";
+import SmallLogo from "./SmallLogo";
 
 export {
   AddToBasketButton,
@@ -29,6 +30,7 @@ export {
   PageTitle,
   PageTitleBold,
   PageWrapper,
+  SmallLogo,
   SplitText,
   Text,
   TitleWrapper,
