@@ -5,7 +5,7 @@ import { LoadingSpinner } from "../../Common/LoadingSpinner";
 
 import { PageWrapper, ErrorText } from "../../Common/";
 import { ListTitle } from "../../Common/ListComponents";
-import { mainImageUrl } from "../../../constants/";
+import { mainImageUrl } from "../../../constants";
 
 import { BasketItems } from "./BasketItems";
 

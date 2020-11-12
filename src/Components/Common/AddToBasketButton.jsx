@@ -2,8 +2,7 @@ import React from "react";
 import styled from "styled-components/macro";
 import { navigate } from "@reach/router";
 
-import { background, text } from "./../../constants/";
-import { addToBasket } from "../../actions";
+import { background, text } from "../../constants";
 
 const ButtonStyles = styled.button`
   width: 150px;
@@ -57,12 +56,4 @@ const AddToBasketButton = ({
     </ButtonWrapper>
   );
 };
-
-const mapStateToProps = (state, { id }) => ({
-  cartQuantity: state.cart.quantityById[id],
-  inventoryQuantity: state.products.byId[id].inventory,
-  id: id,
-  publishDate: state.products.byId[id].publishDate,
-});
-
 export default AddToBasketButton;

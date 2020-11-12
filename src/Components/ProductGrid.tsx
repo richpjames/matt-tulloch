@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { useStaticQuery, graphql, Link } from "gatsby";
-import { text } from "../../../constants";
+import { text } from "../constants";
 
 const GridWrapper = styled.div`
   display: grid;
