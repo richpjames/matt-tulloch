@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
-import styled from "styled-components/macro";
 
 import { Layout } from "../Components/layout";
 import {
@@ -8,15 +7,10 @@ import {
   Text,
   PageWrapper,
   InfoSection,
+  SmallLogo,
 } from "../Components/Common";
 
-import BigLogo from "../Components/Global/BigLogo";
 import CartProvider from "../Components/Pages/Basket/BasketProvider";
-
-const LogoWrap = styled.section`
-  align-self: center;
-  width: 25%;
-`;
 
 interface Props extends PageProps {
   photos: number[];
@@ -56,9 +50,7 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
   return (
     <Layout>
       <CartProvider>
-        <LogoWrap>
-          <BigLogo />
-        </LogoWrap>
+        <SmallLogo />
         <h2>{title}</h2>
         <InfoSection>
           <Text
