@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { navigate } from "@reach/router";
-import { connect } from "react-redux";
 
 import { background, text } from "./../../constants/";
 import { addToBasket } from "../../actions";
@@ -66,4 +65,4 @@ const mapStateToProps = (state, { id }) => ({
   publishDate: state.products.byId[id].publishDate,
 });
 
-export default connect(mapStateToProps, { addToBasket })(AddToBasketButton);
+export default AddToBasketButton;

@@ -10,18 +10,18 @@ export const CartContext = React.createContext();
  * The cart and related methods are shared through context.
  */
 const CartProvider = ({ children }) => {
-  const skus = useStaticQuery(graphql`
-    query MyQuery {
-      allProductsJson {
-        nodes {
-          id
-          devPriceId
-          prodPriceId
-          price
-        }
-      }
-    }
-  `);
+  // const skus = useStaticQuery(graphql`
+  //   query MyQuery {
+  //     allProductsJson {
+  //       nodes {
+  //         id
+  //         devPriceId
+  //         prodPriceId
+  //         price
+  //       }
+  //     }
+  //   }
+  // `);
   const [contents, setContents] = useState(() => {
     // Load cart from local storage. Initialize if not present or incorrect.
     let localCart;

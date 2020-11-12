@@ -1,15 +1,9 @@
-import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
 import { RouteComponentProps } from "@reach/router";
-import { CHECKOUT_SUCCESS } from "../../constants/actionTypes";
 
 import { InfoSection, PageWrapper, PageTitle, Text } from "../Common";
 
 export const Success: React.FC<RouteComponentProps> = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch({ type: CHECKOUT_SUCCESS });
-  }, [dispatch]);
   return (
     <PageWrapper>
       <InfoSection>

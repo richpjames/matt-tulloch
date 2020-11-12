@@ -6369,13 +6369,6 @@ gatsby-plugin-react-helmet@^3.3.14:
   dependencies:
     "@babel/runtime" "^7.11.2"
 
-gatsby-plugin-react-redux@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-react-redux/-/gatsby-plugin-react-redux-1.1.0.tgz#9cd9aa7a93ab4363f00db9b23d5de30b7cd9e2a1"
-  integrity sha512-4usTfg4fgsbiZ32uBANVIYAoBjCR4jG5IvNbsfBVmlDdeisAV9d9SOJbx1ZJVA9SaFkDxOZeDhlWpTsxgNxLmA==
-  dependencies:
-    serialize-javascript "^5.0.1"
-
 gatsby-plugin-sharp@^2.7.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.7.1.tgz#8dcd7f6e7007ba9407bd1203573e2ed2e9230e4c"
@@ -11349,11 +11342,6 @@ react-modal@^3.8.1:
     react-lifecycles-compat "^3.0.0"
     warning "^4.0.3"
 
-react-redux-typescript-scripts@^1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/react-redux-typescript-scripts/-/react-redux-typescript-scripts-1.6.2.tgz#5425374e134eee848968bc35901abc5a9b084f7e"
-  integrity sha512-nASG+t4r7fy7Ov+3R0Lw/tSzAQAeqSlV6qXrz/au0Q3/Gs50oXGJHrz3WWMzPRs2mN/gPV6afgXNMOCQMuhQGA==
-
 react-refresh@^0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
@@ -12100,13 +12088,6 @@ serialize-javascript@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-4.0.0.tgz#b525e1238489a5ecfc42afacc3fe99e666f4b1aa"
   integrity sha512-GaNA54380uFefWghODBWEGisLZFj00nS5ACs6yHa9nLqlLpVLO8ChDGeKRjZnV4Nh4n0Qi7nhYZD/9fCPzEqkw==
-  dependencies:
-    randombytes "^2.1.0"
-
-serialize-javascript@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-5.0.1.tgz#7886ec848049a462467a97d3d918ebb2aaf934f4"
-  integrity sha512-SaaNal9imEO737H2c05Og0/8LUXG7EnsZyMa8MzkmuHoELfT6txuj0cMqRj6zfPKnmQ1yasR4PCJc8x+M4JSPA==
   dependencies:
     randombytes "^2.1.0"
 
