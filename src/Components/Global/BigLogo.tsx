@@ -8,7 +8,7 @@ const BigLogo = () => {
       image: file(relativePath: { eq: "tullochlogo.png" }) {
         sharp: childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
@@ -16,8 +16,9 @@ const BigLogo = () => {
   `);
   return (
     <Image
-      style={{ height: "100%", width: "100%" }}
+      style={{ height: "75%", width: "75%" }}
       fluid={image.sharp.fluid}
+      fadeIn={false}
       alt="company logo"
     />
   );
