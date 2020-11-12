@@ -38,13 +38,11 @@
     "dev": "gatsby develop -p 8888",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "functions": "cd functions && npm i && cd ..",
-    "cypress": "npx cypress run"
+    "functions": "cd functions && npm i && cd .."
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "plugin:cypress/recommended",
       "react-app",
       "./node_modules/react-redux-typescript-scripts/eslint.js",
       "./node_modules/react-redux-typescript-scripts/eslint-prettier.js"
@@ -65,8 +63,6 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.3",
-    "@types/testing-library__cypress": "^5.0.8",
-    "cypress": "^5.1.0",
     "dotenv": "^8.1.0",
     "eslint-config-prettier": "^6.1.0",
     "eslint-plugin-cypress": "^2.11.1",
