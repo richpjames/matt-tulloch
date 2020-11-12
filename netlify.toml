@@ -1,17 +1,12 @@
 [build]
-  command = "yarn buildProd"
+  command = "yarn build"
   publish = "build/"
   functions = "functions/"
 
 [context.production]
-  command = "yarn buildProd"
+  command = "yarn build"
   environment = { NODE_ENV = "production"}
 
 [context.branch-deploy]
-  command = "yarn buildProd"
+  command = "yarn build"
   environment = { NODE_ENV = "production"}
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200

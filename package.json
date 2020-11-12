@@ -49,7 +49,7 @@
   },
   "scripts": {
     "dev": "gatsby develop -p 8888",
-    "build": "gatsby build ",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "functions": "cd functions && npm i && cd ..",
     "cypress": "npx cypress run"
