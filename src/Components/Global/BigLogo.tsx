@@ -1,14 +1,23 @@
 import React from "react";
-import styled from "styled-components/macro";
-
-const Image = styled.img`
-  width: 100%;
-`;
+import Image from "gatsby-image";
+import { useStaticQuery, graphql } from "gatsby";
 
 const BigLogo = () => {
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "tullochlogo.png" }) {
+        sharp: childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
   return (
     <Image
-      src="https://richjames.co.uk/img/tullochlogo_small.png"
+      style={{ height: "100%", width: "100%" }}
+      fluid={image.sharp.fluid}
       alt="company logo"
     />
   );

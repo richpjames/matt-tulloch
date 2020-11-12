@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import { text } from "../../../constants";
 
 const GridWrapper = styled.div`
@@ -32,7 +32,9 @@ export const ProductGrid = () => {
   return (
     <GridWrapper>
       {allProductsJson.nodes.map((product: { slug: string }) => (
-        <GridItem>{product.slug}</GridItem>
+        <Link to={`prints/${product.slug}`}>
+          <GridItem>{product.slug}</GridItem>
+        </Link>
       ))}
     </GridWrapper>
   );

@@ -13,9 +13,9 @@ const LogoWrap = styled.section`
 const MainPage = () => {
   return (
     <Layout>
-      <LogoWrap>
-        <BigLogo />
-      </LogoWrap>
+      {/* <LogoWrap> */}
+      <BigLogo />
+      {/* </LogoWrap> */}
       <ProductGrid />
     </Layout>
   );
