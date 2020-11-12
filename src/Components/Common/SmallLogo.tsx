@@ -17,7 +17,7 @@ const SmallLogo = () => {
   return (
     <Link to="/">
       <Image
-        style={{ height: "65%", width: "65%" }}
+        style={{ height: "100%", width: "20rem" }}
         fluid={image.sharp.fluid}
         fadeIn={false}
         alt="company logo"
