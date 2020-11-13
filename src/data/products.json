@@ -1,7 +1,7 @@
 [
   {
     "title": "Catnipped",
-    "blurb": "<p>Catnipped descriptions</p>",
+    "blurb": "Catnipped descriptions",
     "id": "A1",
     "thumbnail": "2.jpg",
     "price": "10",
@@ -13,7 +13,7 @@
   },
   {
     "title": "Crossland Bikes",
-    "blurb": "<p>Crossland Bikes descriptions</p>",
+    "blurb": "Crossland Bikes descriptions",
     "id": "A2",
     "thumbnail": "2.jpg",
     "price": "10",
@@ -25,7 +25,7 @@
   },
   {
     "title": "Sister Apology",
-    "blurb": "<p>Sister Apology descriptions</p>",
+    "blurb": "Sister Apology descriptions",
     "id": "A3",
     "thumbnail": "2.jpg",
     "price": "10",
@@ -37,7 +37,7 @@
   },
   {
     "title": "Please Hold",
-    "blurb": "<p>Please Hold descriptions</p>",
+    "blurb": "Please Hold descriptions",
     "id": "A4",
     "thumbnail": "2.jpg",
     "price": "10",

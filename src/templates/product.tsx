@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { graphql, PageProps } from "gatsby";
 
 import { Layout } from "../Components/layout";
@@ -10,7 +10,7 @@ import {
   SmallLogo,
 } from "../Components/Common";
 
-import CartProvider from "../Components/Pages/Basket/BasketProvider";
+import CartProvider from "../Components/Pages/Basket/CartProvider";
 
 interface Props extends PageProps {
   photos: number[];
@@ -38,32 +38,21 @@ export const query = graphql`
 `;
 
 const ProductPageTemplate = ({ data, pageContext }: Props) => {
-  const {
-    dimensions,
-    title,
-    price,
-    blurb,
-    id,
-    imagePath,
-    slug,
-  } = data.productsJson;
+  const { dimensions, title, price, blurb, id, imagePath } = data.productsJson;
+
   return (
-    <Layout>
-      <CartProvider>
+    <CartProvider>
+      <Layout>
         <SmallLogo />
         <h2>{title}</h2>
         <InfoSection>
-          <Text
-            text={blurb}
-            // addToBasketButton={
-            //   <AddToBasketButton id={id} borderColour={text} linkTo={slug} />
-            // }
-          />
+          <Text text={blurb} />
+          <AddToBasketButton id={id} />
           <p>{dimensions}</p>
           <p>£{price}</p>
         </InfoSection>
-      </CartProvider>
-    </Layout>
+      </Layout>{" "}
+    </CartProvider>
   );
 };
 export default ProductPageTemplate;

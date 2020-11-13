@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-export const CartContext = React.createContext();
+export const CartContext = createContext();
 
 /** Get products ID, test price and prod price  */
 
@@ -10,18 +10,19 @@ export const CartContext = React.createContext();
  * The cart and related methods are shared through context.
  */
 const CartProvider = ({ children }) => {
-  // const skus = useStaticQuery(graphql`
-  //   query MyQuery {
-  //     allProductsJson {
-  //       nodes {
-  //         id
-  //         devPriceId
-  //         prodPriceId
-  //         price
-  //       }
-  //     }
-  //   }
-  // `);
+  const { products } = useStaticQuery(graphql`
+    query MyQuery {
+      products: allProductsJson {
+        nodes {
+          id
+        }
+      }
+    }
+  `);
+  const skus = products.nodes.reduce((obj, product) => {
+    obj[product.id] = product;
+    return obj;
+  }, {});
   const [contents, setContents] = useState(() => {
     // Load cart from local storage. Initialize if not present or incorrect.
     let localCart;
@@ -95,6 +96,7 @@ const CartProvider = ({ children }) => {
    * @returns {number} The cart quantity after the operation; `-1` if requested amount unavailable
    */
   function add(id, quantity = 1) {
+    console.log(id);
     const currentQuantity = get(id);
     return set(id, quantity + currentQuantity);
   }

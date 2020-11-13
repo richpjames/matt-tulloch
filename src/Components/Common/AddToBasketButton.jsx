@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components/macro";
 import { navigate } from "@reach/router";
 
 import { background, text } from "../../constants";
+import { CartContext } from "../Pages/Basket/CartProvider";
 
 const ButtonStyles = styled.button`
   width: 150px;
@@ -17,41 +18,34 @@ const ButtonWrapper = styled.div`
   padding-top: 1rem;
 `;
 
-const AddToBasketButton = ({
-  cartQuantity,
-  inventoryQuantity,
-  addToBasket,
-  id,
-  borderColour,
-  linkTo,
-  publishDate,
-}) => {
-  const inCart = cartQuantity > 0;
+const AddToBasketButton = ({ id }) => {
+  const { add } = useContext(CartContext);
+  // const inCart = cartQuantity > 0;
 
-  let buttonMessage = "Add to basket";
+  // let buttonMessage = "Add to basket";
 
-  if (new Date(publishDate).getTime() > new Date().getTime()) {
-    buttonMessage = "Pre-order";
-  }
+  // if (new Date(publishDate).getTime() > new Date().getTime()) {
+  //   buttonMessage = "Pre-order";
+  // }
 
-  let onClick = () => addToBasket(id);
+  // let onClick = () => addToBasket(id);
 
-  if (inCart) {
-    buttonMessage = "In basket";
-    onClick = () => navigate(linkTo);
-  } else if (inventoryQuantity < 1) {
-    buttonMessage = "Out of stock";
-  }
+  // if (inCart) {
+  //   buttonMessage = "In basket";
+  //   onClick = () => navigate(linkTo);
+  // } else if (inventoryQuantity < 1) {
+  //   buttonMessage = "Out of stock";
+  // }
 
   return (
     <ButtonWrapper>
       <ButtonStyles
-        onClick={onClick}
+        onClick={() => add(id)}
         disabled={false}
         className="add-to-basket"
-        borderColour={borderColour}
+        // borderColour={borderColour}
       >
-        {buttonMessage}
+        {"button"}
       </ButtonStyles>
     </ButtonWrapper>
   );
