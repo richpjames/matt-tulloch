@@ -11,23 +11,37 @@ export const CartContext = createContext();
  */
 const CartProvider = ({ children }) => {
   const { products } = useStaticQuery(graphql`
-    query MyQuery {
+    query {
       products: allProductsJson {
         nodes {
           id
+          price
+          title
+          prodPriceId
+          devPriceId
+          inventory
+          slug
         }
       }
     }
   `);
+
   const skus = products.nodes.reduce((obj, product) => {
-    obj[product.id] = product;
+    const { prodPriceId, devPriceId, price, title, inventory } = product;
+    obj[product.id] = {
+      priceId: process.env.NODE_ENV === "production" ? prodPriceId : devPriceId,
+      price: price,
+      title: title,
+      inventory: inventory,
+    };
     return obj;
   }, {});
+
   const [contents, setContents] = useState(() => {
     // Load cart from local storage. Initialize if not present or incorrect.
     let localCart;
     try {
-      localCart = JSON.parse(localStorage.getItem("cart"));
+      localCart = JSON.parse(localStorage.getItem("cart") || "");
     } catch (err) {
       console.error(err.message);
     }

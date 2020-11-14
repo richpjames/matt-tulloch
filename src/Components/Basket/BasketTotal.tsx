@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-import { text } from "../../../constants";
+import { text } from "../../constants";
 
 const TotalWrapper = styled.h3`
   text-align: center;

@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import { navigate } from "@reach/router";
 
 import { background, text } from "../../constants";
-import { CartContext } from "../Pages/Basket/CartProvider";
+import { CartContext } from "../Basket/CartProvider";
 
 const ButtonStyles = styled.button`
   width: 150px;
