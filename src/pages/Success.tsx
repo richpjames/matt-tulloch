@@ -7,16 +7,18 @@ import {
   PageTitle,
   Text,
 } from "../Components/Common";
+import { Layout } from "../Components/layout";
 
-export const Success: React.FC<RouteComponentProps> = () => {
+const Success: React.FC<RouteComponentProps> = () => {
   return (
-    <PageWrapper>
+    <Layout>
       <InfoSection>
         <PageTitle title="Success" />
         <Text
           text={`<p>Everything went through ok.<br /> Thanks for your order. <br /> You will receive an email with details. <br /> For enquiries contact@monitorbooks.co.uk</p>`}
         />
       </InfoSection>
-    </PageWrapper>
+    </Layout>
   );
 };
+export default Success;
