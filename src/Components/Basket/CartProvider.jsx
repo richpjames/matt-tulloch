@@ -43,13 +43,11 @@ const CartProvider = ({ children }) => {
         id,
       } = product;
       obj[id] = {
-        priceId:
-          process.env.NODE_ENV === "production" ? prodPriceId : devPriceId,
+        id: process.env.NODE_ENV === "production" ? prodPriceId : devPriceId,
         price: +price,
         title: title,
         inventory: inventory,
         dimensions: dimensions,
-        id: id,
       };
       return obj;
     }, {});
