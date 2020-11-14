@@ -10,7 +10,7 @@ import {
   SmallLogo,
 } from "../Components/Common";
 
-import CartProvider from "../Components/Pages/Basket/CartProvider";
+import CartProvider from "../Components/Basket/CartProvider";
 
 interface Props extends PageProps {
   photos: number[];
