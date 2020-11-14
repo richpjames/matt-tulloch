@@ -5,31 +5,10 @@ import { LoadingSpinner } from "../Common/LoadingSpinner";
 
 import { PageWrapper, ErrorText } from "../Common";
 import { ListTitle } from "../Common/ListComponents";
-import { shippingCosts, initialShipping } from "../../constants";
+import { shippingCosts } from "../../constants";
 
 import { BasketItems } from "./BasketItems";
 import { CartContext } from "./CartProvider";
-
-interface BasketContext {
-  contents: [[sku, number]];
-  cart: [[sku, number]];
-  add: (id: string) => void;
-  subtract: (id: string) => void;
-  get: (id: string) => number;
-  set: (id: string) => void;
-  remove: (id: string) => void;
-  count: number;
-  total: number;
-}
-type sku = {
-  priceId: string;
-  price: number;
-  title: string;
-  inventory: number;
-  slug: string;
-  id: string;
-  dimensions: string;
-};
 
 const Basket = () => {
   const { cart, add, subtract, get, remove, total } = useContext<BasketContext>(
@@ -78,7 +57,6 @@ const Basket = () => {
   } else if (loading) {
     basketComponent = <LoadingSpinner />;
   }
-
 
   return (
     <>
