@@ -1,7 +1,12 @@
 import React from "react";
 import { RouteComponentProps } from "@reach/router";
 
-import { InfoSection, PageWrapper, PageTitle, Text } from "../Common";
+import {
+  InfoSection,
+  PageWrapper,
+  PageTitle,
+  Text,
+} from "../Components/Common";
 
 export const Success: React.FC<RouteComponentProps> = () => {
   return (
