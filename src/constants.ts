@@ -31,20 +31,6 @@ export const shippingCosts: Shipping[] =
     ? productionShippingCosts
     : devShippingCosts;
 
-export const initialShipping = shippingCosts[0];
-
-export const initialState: State = {
-  cart: {
-    addedIds: [],
-    quantityById: {},
-    shipping: shippingCosts[0],
-    hasError: false,
-    loading: false,
-  },
-  shippingCosts: shippingCosts,
-  products: { byId: {}, visibleIds: [] },
-};
-
 //COLOUR USAGE
 export const text = "#37353a";
 export const background = "#fefefe";
@@ -57,3 +43,9 @@ export const productPageImageHeight = "15vw";
 export const productPageImageWidth = "auto";
 
 export const introTimer = 4;
+
+//STRIPE
+export const stripePublishableKey =
+  process.env.NODE_ENV === "production"
+    ? process.env.GATSBY_PROD_STRIPE_PUBLISHABLE_KEY
+    : process.env.GATSBY_DEV_PUBLISHABLE_KEY;
