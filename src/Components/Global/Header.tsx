@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { Link } from "@reach/router";
+import { Link } from "gatsby";
 
 const Nav = styled.nav`
   display: flex;
@@ -73,7 +73,6 @@ const navItems = [
     link: "/basket",
     ariaLabel: "Basket link",
     content: "basket",
-
     className: "basket",
   },
 ];

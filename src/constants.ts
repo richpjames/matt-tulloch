@@ -31,6 +31,8 @@ export const shippingCosts: Shipping[] =
     ? productionShippingCosts
     : devShippingCosts;
 
+export const initialShipping = shippingCosts[0];
+
 export const initialState: State = {
   cart: {
     addedIds: [],

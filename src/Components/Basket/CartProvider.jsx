@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 import { useStaticQuery, graphql } from "gatsby";
+import { shippingCosts } from "../../constants";
 
 export const CartContext = createContext();
 
@@ -21,21 +22,39 @@ const CartProvider = ({ children }) => {
           devPriceId
           inventory
           slug
+          dimensions
         }
       }
     }
   `);
 
-  const skus = products.nodes.reduce((obj, product) => {
-    const { prodPriceId, devPriceId, price, title, inventory } = product;
-    obj[product.id] = {
-      priceId: process.env.NODE_ENV === "production" ? prodPriceId : devPriceId,
-      price: price,
-      title: title,
-      inventory: inventory,
-    };
-    return obj;
-  }, {});
+  let shipping;
+  shipping = shipping || shippingCosts[0];
+
+  const generateSkus = (products) =>
+    products.reduce((obj, product) => {
+      const {
+        prodPriceId,
+        devPriceId,
+        price,
+        title,
+        inventory,
+        dimensions,
+        id,
+      } = product;
+      obj[id] = {
+        priceId:
+          process.env.NODE_ENV === "production" ? prodPriceId : devPriceId,
+        price: +price,
+        title: title,
+        inventory: inventory,
+        dimensions: dimensions,
+        id: id,
+      };
+      return obj;
+    }, {});
+
+  const skus = generateSkus(products.nodes);
 
   const [contents, setContents] = useState(() => {
     // Load cart from local storage. Initialize if not present or incorrect.
@@ -67,10 +86,10 @@ const CartProvider = ({ children }) => {
   const count = contents.reduce((sum, [_, quantity]) => sum + quantity, 0);
 
   /** The total cost of the items in the cart */
-  const total = contents.reduce(
-    (sum, [id, quantity]) => sum + skus[id].price * quantity,
-    0
-  );
+  const total =
+    contents.reduce((sum, [id, quantity]) => {
+      return sum + skus[id].price * quantity;
+    }, 0) + shipping.price;
 
   /**
    * Returns the quantity of a sku in the cart.
@@ -110,7 +129,6 @@ const CartProvider = ({ children }) => {
    * @returns {number} The cart quantity after the operation; `-1` if requested amount unavailable
    */
   function add(id, quantity = 1) {
-    console.log(id);
     const currentQuantity = get(id);
     return set(id, quantity + currentQuantity);
   }
@@ -123,7 +141,7 @@ const CartProvider = ({ children }) => {
    */
   function subtract(id, quantity = 1) {
     const currentQuantity = get(id);
-    const newQuantity = Math.max(0, quantity - currentQuantity);
+    const newQuantity = Math.max(0, currentQuantity - quantity);
     return set(id, newQuantity);
   }
 
@@ -137,7 +155,6 @@ const CartProvider = ({ children }) => {
       return state.filter((item) => item[0] !== id);
     });
   }
-
   const ctx = {
     contents,
     cart,

@@ -17,7 +17,6 @@ const CheckoutSectionWrap = styled.section`
 interface Props {
   setShipping: (index: number) => void;
   shipping: Shipping;
-  shippingOptions: Shipping[];
   onCheckoutClicked: (click: React.MouseEvent) => void;
   hasItems: boolean;
   total: string;
@@ -28,16 +27,11 @@ export const CheckoutSection: React.FC<Props> = ({
   onCheckoutClicked,
   setShipping,
   shipping,
-  shippingOptions,
   total,
 }) => {
   return (
     <CheckoutSectionWrap>
-      <Shipping
-        shipping={shipping}
-        setShipping={setShipping}
-        shippingOptions={shippingOptions}
-      />
+      <Shipping shipping={shipping} setShipping={setShipping} />
       <BasketTotal total={`${twoDecimalPlaces(+total + shipping.price)}`} />
       <CTAButton onClick={onCheckoutClicked} disabled={!hasItems}>
         Checkout

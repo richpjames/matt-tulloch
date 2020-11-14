@@ -22,8 +22,7 @@ type BasketItemsProps = {
   basketItems: JSX.Element[];
   shipping: Shipping;
   setShipping: (index: number) => void;
-  shippingOptions: Shipping[];
-  total: string;
+  total: number;
   onCheckoutClicked: (click: React.MouseEvent) => void;
 };
 
@@ -33,7 +32,6 @@ export const BasketItems: React.FC<BasketItemsProps> = ({
   onCheckoutClicked,
   setShipping,
   shipping,
-  shippingOptions,
   total,
 }) => {
   const hasProducts = basketItems?.length > 0;
@@ -46,7 +44,6 @@ export const BasketItems: React.FC<BasketItemsProps> = ({
         onCheckoutClicked={onCheckoutClicked}
         setShipping={setShipping}
         shipping={shipping}
-        shippingOptions={shippingOptions}
         total={total}
       />
     </>

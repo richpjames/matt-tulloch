@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 
 import { ShippingCost } from "./ShippingCost";
 
-import { text } from "../../constants";
+import { text, shippingCosts } from "../../constants";
 import { twoDecimalPlaces } from "../../utils";
 
 const ShippingLabel = styled.label`
@@ -18,14 +18,9 @@ const ShippingSelector = styled.select`
 interface Props {
   setShipping: (index: number) => void;
   shipping: Shipping;
-  shippingOptions: Shipping[];
 }
 
-export const Shipping: React.FC<Props> = ({
-  setShipping,
-  shipping,
-  shippingOptions,
-}) => {
+export const Shipping: React.FC<Props> = ({ setShipping, shipping }) => {
   return (
     <>
       <ShippingLabel htmlFor="shipping">Postal region:</ShippingLabel>
@@ -34,7 +29,7 @@ export const Shipping: React.FC<Props> = ({
           setShipping(+event.target.value);
         }}
       >
-        {shippingOptions.map((shippingRegion, index) => (
+        {shippingCosts.map((shippingRegion, index) => (
           <option value={index} key={index}>
             {shippingRegion.region}
           </option>
