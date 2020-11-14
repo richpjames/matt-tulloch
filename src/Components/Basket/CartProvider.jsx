@@ -15,7 +15,6 @@ const CartProvider = ({ children }) => {
     query {
       products: allProductsJson {
         nodes {
-          id
           price
           title
           prodPriceId
@@ -33,6 +32,7 @@ const CartProvider = ({ children }) => {
 
   const generateSkus = (products) =>
     products.reduce((obj, product) => {
+      console.log(product);
       const {
         prodPriceId,
         devPriceId,
@@ -40,10 +40,11 @@ const CartProvider = ({ children }) => {
         title,
         inventory,
         dimensions,
-        id,
       } = product;
+      const id =
+        process.env.NODE_ENV === "production" ? prodPriceId : devPriceId;
       obj[id] = {
-        id: process.env.NODE_ENV === "production" ? prodPriceId : devPriceId,
+        id: id,
         price: +price,
         title: title,
         inventory: inventory,

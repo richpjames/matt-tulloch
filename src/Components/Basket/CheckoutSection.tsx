@@ -10,8 +10,6 @@ import { CTAButton } from "../Common";
 import { BasketTotal } from "./BasketTotal";
 import { stripePublishableKey } from "../../constants";
 
-const stripePromise = loadStripe(stripePublishableKey || "");
-
 const CheckoutSectionWrap = styled.section`
   padding-top: 2rem;
   display: flex;
@@ -32,13 +30,15 @@ export const CheckoutSection: React.FC<Props> = ({
   shipping,
 }) => {
   const { cart, total } = useContext<BasketContext>(CartContext);
+
   const onCheckoutClicked = () => {
-    debugger;
     const lineItems = cart.map(([sku, quantity]) => ({
       price: sku.id,
       quantity,
     }));
-    fetch("/.netlify/functions/orderCreate", {
+    const stripePromise = loadStripe(stripePublishableKey || "");
+
+    fetch("/.netlify/functions/create-checkout", {
       method: "POST",
       body: JSON.stringify(lineItems),
     })
