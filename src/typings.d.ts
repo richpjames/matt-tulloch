@@ -52,3 +52,24 @@ type InitialState = {
   products: { byId: {}; visibleIds: [] };
   shippingCosts: Shipping[];
 };
+
+interface BasketContext {
+  contents: [[sku, number]];
+  cart: [[sku, number]];
+  add: (id: string) => void;
+  subtract: (id: string) => void;
+  get: (id: string) => number;
+  set: (id: string) => void;
+  remove: (id: string) => void;
+  count: number;
+  total: number;
+}
+type sku = {
+  priceId: string;
+  price: number;
+  title: string;
+  inventory: number;
+  slug: string;
+  id: string;
+  dimensions: string;
+};
