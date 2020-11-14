@@ -1,7 +1,7 @@
 {
   "name": "tulltulloch-int",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "license": "MIT",
   "homepage": ".",
   "main": "./src/index.tsx",
