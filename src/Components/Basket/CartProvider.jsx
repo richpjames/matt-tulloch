@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import { shippingCosts } from "../../constants";
+import { ProductsContext } from "../ProductsProvider";
 
 export const CartContext = createContext();
 
@@ -11,49 +11,9 @@ export const CartContext = createContext();
  * The cart and related methods are shared through context.
  */
 const CartProvider = ({ children }) => {
-  const { products } = useStaticQuery(graphql`
-    query {
-      products: allProductsJson {
-        nodes {
-          price
-          title
-          prodPriceId
-          devPriceId
-          inventory
-          slug
-          dimensions
-        }
-      }
-    }
-  `);
-
+  const { products, skus } = React.useContext(ProductsContext);
   let shipping;
   shipping = shipping || shippingCosts[0];
-
-  const generateSkus = (products) =>
-    products.reduce((obj, product) => {
-      console.log(product);
-      const {
-        prodPriceId,
-        devPriceId,
-        price,
-        title,
-        inventory,
-        dimensions,
-      } = product;
-      const id =
-        process.env.NODE_ENV === "production" ? prodPriceId : devPriceId;
-      obj[id] = {
-        id: id,
-        price: +price,
-        title: title,
-        inventory: inventory,
-        dimensions: dimensions,
-      };
-      return obj;
-    }, {});
-
-  const skus = generateSkus(products.nodes);
 
   const [contents, setContents] = useState(() => {
     // Load cart from local storage. Initialize if not present or incorrect.
