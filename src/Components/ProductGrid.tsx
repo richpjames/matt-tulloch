@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components/macro";
-import { useStaticQuery, graphql, Link } from "gatsby";
+import { Link } from "gatsby";
 import { text } from "../constants";
+import { ProductsContext } from "./ProductsProvider";
 
+import Image from "gatsby-image";
 const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -13,27 +15,19 @@ const GridWrapper = styled.div`
   }
 `;
 
-const GridItem = styled.div`
+const GridItem = styled(Image)<{ fluid: any }>`
   height: 15rem;
   width: 15rem;
   border: 5px solid ${text};
 `;
 
 export const ProductGrid = () => {
-  const { allProductsJson } = useStaticQuery(graphql`
-    query {
-      allProductsJson {
-        nodes {
-          slug
-        }
-      }
-    }
-  `);
+  const { products } = useContext(ProductsContext);
   return (
     <GridWrapper>
-      {allProductsJson.nodes.map((product: { slug: string }) => (
-        <Link to={`prints/${product.slug}`}>
-          <GridItem>{product.slug}</GridItem>
+      {products.map((product: { image: any; slug: string }, index: number) => (
+        <Link to={`prints/${product.slug}`} key={index}>
+          <GridItem fluid={product.image.fluid} />
         </Link>
       ))}
     </GridWrapper>
