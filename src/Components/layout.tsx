@@ -5,8 +5,10 @@ import styled from "styled-components/macro";
 import { useSiteMetadata } from "../hooks/use-sitemetadata";
 
 import { GlobalStyle } from "../styles";
+import CartProvider from "./Basket/CartProvider";
 import { Footer } from "./Global/Footer";
 import { Header } from "./Global/Header";
+import ProductsProvider from "./ProductsProvider";
 
 const PageWrap = styled.div`
   margin-left: auto;
@@ -28,17 +30,21 @@ export const Layout: React.FC = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
     <>
-      <GlobalStyle />
-      <Helmet>
-        <html lang="en" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-      </Helmet>
-      <Header />
-      <main>
-        <PageWrap>{children}</PageWrap>
-      </main>
-      <Footer />
+      <ProductsProvider>
+        <CartProvider>
+          <GlobalStyle />
+          <Helmet>
+            <html lang="en" />
+            <title>{title}</title>
+            <meta name="description" content={description} />
+          </Helmet>
+          <Header />
+          <main>
+            <PageWrap>{children}</PageWrap>
+          </main>
+          <Footer />
+        </CartProvider>
+      </ProductsProvider>
     </>
   );
 };
