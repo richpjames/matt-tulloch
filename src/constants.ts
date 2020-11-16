@@ -1,28 +1,28 @@
 const devShippingCosts = [
-  { region: "UK", priceId: "price_1HMwTgJs9ciiqN7OnYGR5rOp", price: 2.5 },
+  { region: "UK", priceId: "price_1HoElhI7nlRkVz3TrARQePqM", price: 3 },
   {
     region: "Europe",
-    priceId: "price_1HMwTgJs9ciiqN7OwbLHDoty",
-    price: 4,
+    priceId: "price_1HoElhI7nlRkVz3Tndw9kSoh",
+    price: 4.2,
   },
   {
     region: "Rest Of The World",
-    priceId: "price_1HMwTgJs9ciiqN7OBWk2Jv6a",
-    price: 5,
+    priceId: "price_1HoEyNI7nlRkVz3T8iKgWeXK",
+    price: 6.2,
   },
 ];
 
 const productionShippingCosts = [
-  { region: "UK", priceId: "price_1HOpaOJs9ciiqN7OcNEPQA7G", price: 2.5 },
+  { region: "UK", priceId: "price_1HoEdKI7nlRkVz3TIUGsOewK", price: 3 },
   {
     region: "Europe",
-    priceId: "price_1HOpaOJs9ciiqN7OcRyOPBkG",
-    price: 4,
+    priceId: "price_1HoEdKI7nlRkVz3TgnK2CyMl",
+    price: 4.2,
   },
   {
     region: "Rest Of The World",
-    priceId: "price_1HOpaOJs9ciiqN7Oxtqh00zC",
-    price: 5,
+    priceId: "price_1HoEymI7nlRkVz3TcNWy6vOE",
+    price: 6.2,
   },
 ];
 

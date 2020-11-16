@@ -11,7 +11,7 @@ export const CartContext = createContext();
  * The cart and related methods are shared through context.
  */
 const CartProvider = ({ children }) => {
-  const { products, skus } = React.useContext(ProductsContext);
+  const { productsById } = React.useContext(ProductsContext);
   let shipping;
   shipping = shipping || shippingCosts[0];
 
@@ -38,7 +38,7 @@ const CartProvider = ({ children }) => {
 
   /** An array representing cart items in the form of [{sku}, quantity] */
   const cart = contents.map(([id, quantity]) => {
-    return [skus[id], quantity];
+    return [productsById[id], quantity];
   });
 
   /** The number of items in the cart */
@@ -47,7 +47,7 @@ const CartProvider = ({ children }) => {
   /** The total cost of the items in the cart */
   const total =
     contents.reduce((sum, [id, quantity]) => {
-      return sum + skus[id].price * quantity;
+      return sum + productsById[id].price * quantity;
     }, 0) + shipping.price;
 
   /**

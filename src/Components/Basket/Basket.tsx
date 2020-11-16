@@ -21,7 +21,7 @@ const Basket = () => {
   const isProduct = (cartItem: any) => cartItem.id !== "shipping";
 
   const basketItems = cart.filter(isProduct).map((product, index) => {
-    const { title, price, inventory, slug, id, dimensions } = product[0];
+    const { title, price, inventory, slug, id, dimensions, image } = product[0];
     const quantity = get(id);
     return (
       <BasketListItem
@@ -29,7 +29,7 @@ const Basket = () => {
         price={price}
         id={id}
         dimensions={dimensions}
-        // imageSrc={`${mainImageUrl}${slug}/thumbnails/${slug}`}
+        image={image}
         stock={inventory}
         quantity={quantity}
         addToBasket={add}

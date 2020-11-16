@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { navigate } from "@reach/router";
+import Image from "gatsby-image";
 
 import { PageTitle } from "./Titles";
 import { background, text } from "../../constants";
@@ -94,7 +95,7 @@ export const ListItemPhotoWrap = styled.div<{ width: string }>`
   }
 `;
 
-export const Photo = styled.img`
+export const Photo = styled(Image)<{ fluid: any }>`
   width: 100%;
   height: 100%;
   object-fit: cover;

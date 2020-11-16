@@ -24,7 +24,7 @@ interface Props {
   decrementInCart: (id: string) => void;
   removeFromBasket: (id: string) => void;
   id: string;
-  // imageSrc: string;
+  image: any;
   index: number;
   price: number;
   quantity: number;
@@ -37,6 +37,7 @@ interface Props {
 export const BasketListItem: React.FC<Props> = ({
   index,
   title,
+  image,
   slug,
   id,
   addToBasket,
@@ -56,7 +57,7 @@ export const BasketListItem: React.FC<Props> = ({
       className={title}
     >
       <ListItemPhotoWrap width="40%" onClick={() => {}}>
-        {/* <ListItemPhoto src={imageSrc} /> */}
+        <ListItemPhoto fluid={image.fluid} />
       </ListItemPhotoWrap>
       <MetaInfoContainer index={index} width="40%">
         <ListItemTitle>{title}</ListItemTitle>

@@ -23,14 +23,14 @@ ProductsProvider.propTypes = {
  */
 const Provider = ({ data, children }) => {
   // Load product data from Gatsby store
-  const [initialProducts, skus] = processGatsbyData(data);
+  const [initialProducts, productsById] = processGatsbyData(data);
   const [products, setProducts] = useState(initialProducts);
 
   return (
     <ProductsContext.Provider
       value={{
         products,
-        skus,
+        productsById,
         listProducts: (sortFn) => {
           const fn = sortFn || ((a, b) => b.price - a.price);
           return Object.values(products).sort(fn);
@@ -52,7 +52,7 @@ const processGatsbyData = (data) => {
   const { allImageSharp, allProductsJson } = data;
 
   const products = [];
-  const skus = {};
+  const productsById = {};
   allProductsJson.nodes.forEach((productData) => {
     const {
       prodPriceId,
@@ -63,7 +63,6 @@ const processGatsbyData = (data) => {
       dimensions,
       slug,
     } = productData;
-    console.log(title, "title");
     const id = process.env.NODE_ENV === "production" ? prodPriceId : devPriceId;
     const imageQuery = new RegExp(String.raw`${slug}`);
     const image = allImageSharp.nodes.find((image) =>
@@ -77,14 +76,11 @@ const processGatsbyData = (data) => {
       slug,
       image,
     };
-    productData.skus = allProductsJson.nodes.map((product) => {
-      skus[id] = product;
-      return product;
-    });
+
     products.push(product);
-    products[id] = product;
+    productsById[id] = product;
   });
-  return [products, skus];
+  return [products, productsById];
 };
 
 const skusQuery = graphql`
