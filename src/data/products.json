@@ -7,8 +7,8 @@
     "price": "10",
     "slug": "catnipped",
     "inventory": 20,
-    "prodPriceId": "price_1HdckTJs9ciiqN7O218PIefo",
-    "devPriceId": "dev price",
+    "prodPriceId": "price_1HlKogI7nlRkVz3TcykbzQVe",
+    "devPriceId": "price_1HoEjCI7nlRkVz3TLVys9OIx",
     "dimensions": "29cm x 29cm"
   },
   {
@@ -19,8 +19,8 @@
     "price": "10",
     "slug": "crossland-bikes",
     "inventory": 20,
-    "devPriceId": "price_1HdckTJs9ciiqN7O218PIefo",
-    "prodPriceId": "price_1HdckTJs9ciiqN7O218PIefo",
+    "devPriceId": "price_1HoEiGI7nlRkVz3TkcJsv2M8",
+    "prodPriceId": "price_1HlLDcI7nlRkVz3TgZIq5PXb",
     "dimensions": "29cm x 29cm"
   },
   {
@@ -31,8 +31,8 @@
     "price": "10",
     "slug": "sister-apology",
     "inventory": 20,
-    "devPriceId": "price_1HdckTJs9ciiqN7O218PIefo",
-    "prodPriceId": "price_1HdckTJs9ciiqN7O218PIefo",
+    "devPriceId": "price_1HoEhxI7nlRkVz3TO3ZdAoij",
+    "prodPriceId": "price_1HlaF8I7nlRkVz3TLfoj5XZ5",
     "dimensions": "29cm x 29cm"
   },
   {
@@ -43,8 +43,8 @@
     "price": "10",
     "slug": "please-hold",
     "inventory": 20,
-    "devPriceId": "price_1HdckTJs9ciiqN7O218PIefo",
-    "prodPriceId": "price_1HdckTJs9ciiqN7O218PIefo",
+    "devPriceId": "price_1HoEijI7nlRkVz3TCo5AhyzQ",
+    "prodPriceId": "price_1HlL2NI7nlRkVz3T0nj1o4Bm",
     "dimensions": "A3"
   }
 ]
