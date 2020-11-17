@@ -27,7 +27,7 @@ const productionShippingCosts = [
 ];
 
 export const shippingCosts: Shipping[] =
-  process.env.NODE_ENV === "production"
+  process.env.GATSBY_ENV === "production"
     ? productionShippingCosts
     : devShippingCosts;
 
@@ -41,8 +41,6 @@ export const mainImageUrl = `https://www.monitorbooks.co.uk/img/`;
 //IMAGES
 export const productPageImageHeight = "15vw";
 export const productPageImageWidth = "auto";
-
-export const introTimer = 4;
 
 //STRIPE
 export const stripePublishableKey =
