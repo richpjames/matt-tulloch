@@ -36,6 +36,7 @@ export const CheckoutSection: React.FC<Props> = ({
       price: sku.id,
       quantity,
     }));
+
     const stripePromise = loadStripe(stripePublishableKey || "");
 
     fetch("/.netlify/functions/create-checkout", {
@@ -43,12 +44,13 @@ export const CheckoutSection: React.FC<Props> = ({
       body: JSON.stringify(lineItems),
     })
       .then(async (response) => {
-        const { id } = await response.json();
+        const { sessionId } = await response.json();
+        console.log("id", sessionId);
         localStorage.setItem("cart", "{}");
         const stripe = await stripePromise;
         if (stripe) {
           const stripeResponse = await stripe.redirectToCheckout({
-            sessionId: id,
+            sessionId: sessionId,
           });
 
           if (stripeResponse.error) {
