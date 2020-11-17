@@ -51,7 +51,7 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
     prodPriceId,
     devPriceId,
   } = data.productsJson;
-  const id = process.env.NODE_ENV === "production" ? prodPriceId : devPriceId;
+  const id = process.env.GATSBY_ENV === "production" ? prodPriceId : devPriceId;
 
   const { image } = data;
   return (
