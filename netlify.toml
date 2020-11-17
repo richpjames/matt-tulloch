@@ -5,8 +5,8 @@
 
 [context.production]
   command = "yarn build"
-  environment = { NODE_ENV = "production"}
+  environment = { GATSBY_ENV = "production"}
 
 [context.branch-deploy]
   command = "yarn build"
-  environment = { NODE_ENV = "production"}
+  environment = { GATSBY_ENV = "production"}
