@@ -72,4 +72,5 @@ type sku = {
   slug: string;
   id: string;
   dimensions: string;
+  image: any;
 };
