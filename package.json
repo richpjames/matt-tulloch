@@ -34,7 +34,8 @@
     "typescript": "^3.9.5"
   },
   "scripts": {
-    "dev": "gatsby develop -p 8888",
+    "start": "gatsby develop",
+    "dev": "netlify dev",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "functions": "cd functions && npm i && cd .."
