@@ -25,11 +25,19 @@ export const ProductGrid = () => {
   const { products } = useContext(ProductsContext);
   return (
     <GridWrapper>
-      {products.map((product: { image: any; slug: string }, index: number) => (
-        <Link to={`prints/${product.slug}`} key={index}>
-          <GridItem fluid={product.image.fluid} />
-        </Link>
-      ))}
+      {products.map(
+        (
+          product: { image: any; slug: string; title: string },
+          index: number
+        ) => (
+          <Link to={`prints/${product.slug}`} key={index}>
+            <GridItem
+              fluid={product.image.fluid}
+              alt={`${product.title} image`}
+            />
+          </Link>
+        )
+      )}
     </GridWrapper>
   );
 };
