@@ -12,6 +12,7 @@
     "@types/node": "^14.0.13",
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
+    "@types/react-helmet": "^6.1.0",
     "@types/styled-components": "^5.1.0",
     "cross-fetch": "^3.0.6",
     "dompurify": "^2.1.1",
