@@ -23,13 +23,11 @@ type BasketItemsProps = {
   shipping: Shipping;
   setShipping: (index: number) => void;
   total: number;
-  onCheckoutClicked: (click: React.MouseEvent) => void;
 };
 
 export const BasketItems: React.FC<BasketItemsProps> = ({
   basketItems,
   hasItems,
-  onCheckoutClicked,
   setShipping,
   shipping,
   total,
@@ -41,10 +39,8 @@ export const BasketItems: React.FC<BasketItemsProps> = ({
       <BasketItemsSection>{basketItems}</BasketItemsSection>
       <CheckoutSection
         hasItems={hasItems}
-        onCheckoutClicked={onCheckoutClicked}
         setShipping={setShipping}
         shipping={shipping}
-        total={total}
       />
     </>
   ) : (

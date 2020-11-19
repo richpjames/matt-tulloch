@@ -16,6 +16,9 @@ const ProductPageTitle = styled.h2`
   align-self: flex-start;
 `;
 
+const ImageWrap = styled.div`
+  padding: 3rem;
+`;
 interface Props extends PageProps {
   photos: number[];
   title: string;
@@ -36,6 +39,7 @@ export const query = graphql`
       price
       dimensions
       title
+      inventory
     }
     image: file(name: { in: [$slug] }) {
       sharp: childImageSharp {
@@ -52,9 +56,10 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
     dimensions,
     title,
     price,
-    blurb,
     prodPriceId,
     devPriceId,
+    blurb,
+    inventory,
   } = data.productsJson;
   const id = process.env.GATSBY_ENV === "production" ? prodPriceId : devPriceId;
   const { image } = data;
@@ -62,16 +67,19 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
   return (
     <Layout>
       <SmallLogo />
-      <GatsbyImage
-        fluid={image.sharp.fluid}
-        alt={`a photo of ${title} print`}
-      />
+      <ImageWrap>
+        <GatsbyImage
+          fluid={image.sharp.fluid}
+          alt={`a photo of ${title} print`}
+          style={{ width: "60rem", height: "auto" }}
+        />
+      </ImageWrap>
       <ProductPageTitle>{title}</ProductPageTitle>
       <InfoSection>
-        <Text text={blurb} />
-        <AddToBasketButton id={id} />
+        <p>{blurb}</p>
         <p>{dimensions}</p>
         <p>£{price}</p>
+        <AddToBasketButton id={id} inventory={inventory} />
       </InfoSection>
     </Layout>
   );

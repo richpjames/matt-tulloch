@@ -21,7 +21,6 @@ interface Props {
   setShipping: (index: number) => void;
   shipping: Shipping;
   hasItems: boolean;
-  total: string;
 }
 
 export const CheckoutSection: React.FC<Props> = ({

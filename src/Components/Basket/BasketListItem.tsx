@@ -56,8 +56,8 @@ export const BasketListItem: React.FC<Props> = ({
       topMargin="2rem"
       className={title}
     >
-      <ListItemPhotoWrap width="40%" onClick={() => {}}>
-        <ListItemPhoto fluid={image.fluid} />
+      <ListItemPhotoWrap width="30%">
+        <ListItemPhoto fluid={image.fluid} alt={`${title} print image`} />
       </ListItemPhotoWrap>
       <MetaInfoContainer index={index} width="40%">
         <ListItemTitle>{title}</ListItemTitle>

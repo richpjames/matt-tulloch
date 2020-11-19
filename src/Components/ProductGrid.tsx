@@ -18,7 +18,7 @@ const GridWrapper = styled.div`
 const GridItem = styled(Image)<{ fluid: any }>`
   height: 15rem;
   width: 15rem;
-  border: 5px solid ${text};
+  border: 0.5rem solid ${text};
 `;
 
 export const ProductGrid = () => {

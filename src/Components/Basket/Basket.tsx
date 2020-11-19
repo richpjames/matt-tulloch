@@ -1,14 +1,18 @@
 import React, { useContext, useState } from "react";
+import styled from "styled-components/macro";
 
 import { BasketListItem } from "./BasketListItem";
 import { LoadingSpinner } from "../Common/LoadingSpinner";
 
 import { ErrorText } from "../Common";
-import { ListTitle } from "../Common/ListComponents";
 import { shippingCosts } from "../../constants";
 
 import { BasketItems } from "./BasketItems";
 import { CartContext } from "./CartProvider";
+
+const BasketWrapper = styled.section`
+  width: 60rem;
+`;
 
 const Basket = () => {
   const { cart, add, subtract, get, remove, total } = useContext<BasketContext>(
@@ -51,18 +55,12 @@ const Basket = () => {
         shipping={shipping}
         setShipping={setShipping}
         total={total}
-        onCheckoutClicked={() => {}}
       />
     );
   } else if (loading) {
     basketComponent = <LoadingSpinner />;
   }
 
-  return (
-    <>
-      <ListTitle>Basket</ListTitle>
-      {basketComponent}
-    </>
-  );
+  return <BasketWrapper>{basketComponent}</BasketWrapper>;
 };
 export default Basket;

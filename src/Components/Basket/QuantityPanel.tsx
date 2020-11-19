@@ -25,17 +25,13 @@ const ButtonWrapper = styled.div`
 const Quantity = styled.h5`
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  padding-top: 0.25rem;
   color: ${text};
 `;
 
 const QuantityLabel = styled(Quantity)``;
 
-const Button = styled.button`
-  color: ${text};
-  border: 1px solid ${text};
-  background: ${background};
-  line-height: 1px;
-`;
+const Button = styled.button``;
 
 const InnerButtonContent = styled.span`
   line-height: 1px;

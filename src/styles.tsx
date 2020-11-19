@@ -39,10 +39,8 @@ h3 {
 
 
 h4 {  
-    font-size: 1.4em;
-    font-family: 'Recoleta', sans-serif;
-    font-weight: 100;
-
+    font-size: 1.2em;
+    font-family: sans-serif;
     }
 
 h5 {  font-size: .95em;    }
