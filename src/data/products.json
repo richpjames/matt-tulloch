@@ -1,7 +1,7 @@
 [
   {
     "title": "Catnipped",
-    "blurb": "Catnipped descriptions",
+    "blurb": "Heavyweight print - high quality 300gsm white recycled board - A premium recycled finish with a textured look.",
     "id": "A1",
     "thumbnail": "2.jpg",
     "price": "10",
@@ -9,11 +9,11 @@
     "inventory": 20,
     "prodPriceId": "price_1HlKogI7nlRkVz3TcykbzQVe",
     "devPriceId": "price_1HoEjCI7nlRkVz3TLVys9OIx",
-    "dimensions": "29cm x 29cm"
+    "dimensions": "20cm x 42cm"
   },
   {
     "title": "Crossland Bikes",
-    "blurb": "Crossland Bikes descriptions",
+    "blurb": "Heavyweight print - 300gsm white recycled board - A premium recycled finish with a textured look",
     "id": "A2",
     "thumbnail": "2.jpg",
     "price": "10",
@@ -21,11 +21,11 @@
     "inventory": 20,
     "devPriceId": "price_1HoEiGI7nlRkVz3TkcJsv2M8",
     "prodPriceId": "price_1HlLDcI7nlRkVz3TgZIq5PXb",
-    "dimensions": "29cm x 29cm"
+    "dimensions": "29cm x 42cm"
   },
   {
     "title": "Sister Apology",
-    "blurb": "Sister Apology descriptions",
+    "blurb": "Heavyweight print - 300gsm white recycled board - A premium recycled finish with a textured look.",
     "id": "A3",
     "thumbnail": "2.jpg",
     "price": "10",
@@ -33,11 +33,11 @@
     "inventory": 20,
     "devPriceId": "price_1HoEhxI7nlRkVz3TO3ZdAoij",
     "prodPriceId": "price_1HlaF8I7nlRkVz3TLfoj5XZ5",
-    "dimensions": "29cm x 29cm"
+    "dimensions": "29cm x 42cm"
   },
   {
     "title": "Please Hold",
-    "blurb": "Please Hold descriptions",
+    "blurb": "Heavyweight print on 300gsm white recycled board - A premium recycled finish with a textured look.",
     "id": "A4",
     "thumbnail": "2.jpg",
     "price": "10",
@@ -45,6 +45,6 @@
     "inventory": 20,
     "devPriceId": "price_1HoEijI7nlRkVz3TCo5AhyzQ",
     "prodPriceId": "price_1HlL2NI7nlRkVz3T0nj1o4Bm",
-    "dimensions": "A3"
+    "dimensions": "29cm x 29cm"
   }
 ]
