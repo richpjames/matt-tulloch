@@ -1,4 +1,4 @@
-import { PageWrapper, InfoSection } from "./Common";
+import { InfoSection } from "./Common";
 import AddToBasketButton from "./AddToBasketButton";
 import { CTAButton } from "./CTAButton";
 import {
@@ -11,7 +11,6 @@ import {
 } from "./ListComponents";
 import { LoadingSpinner } from "./LoadingSpinner";
 import { SplitText, Text, ErrorText } from "./Text";
-import { PageSubtitle, PageTitle, PageTitleBold, TitleWrapper } from "./Titles";
 import SmallLogo from "./SmallLogo";
 
 export {
@@ -26,12 +25,7 @@ export {
   ListItemTitle,
   LoadingSpinner,
   MetaInfoContainer,
-  PageSubtitle,
-  PageTitle,
-  PageTitleBold,
-  PageWrapper,
   SmallLogo,
   SplitText,
   Text,
-  TitleWrapper,
 };

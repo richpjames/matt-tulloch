@@ -3,7 +3,6 @@ import styled from "styled-components/macro";
 import { navigate } from "@reach/router";
 import Image from "gatsby-image";
 
-import { PageTitle } from "./Titles";
 import { background, text } from "../../constants";
 
 interface ListItemContainerProps {
@@ -109,7 +108,7 @@ export const Photo = styled(Image)<{ fluid: any }>`
   }
 `;
 
-export const ListTitle = styled(PageTitle)`
+export const ListTitle = styled.h4`
   width: 100%;
   text-align: center;
   display: block;

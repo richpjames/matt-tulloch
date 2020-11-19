@@ -3,7 +3,7 @@ import React, { useContext, useState } from "react";
 import { BasketListItem } from "./BasketListItem";
 import { LoadingSpinner } from "../Common/LoadingSpinner";
 
-import { PageWrapper, ErrorText } from "../Common";
+import { ErrorText } from "../Common";
 import { ListTitle } from "../Common/ListComponents";
 import { shippingCosts } from "../../constants";
 

@@ -1,23 +1,7 @@
 import styled from "styled-components/macro";
 import { text } from "../../constants";
 
-export const PageWrapper = styled.div`
-  max-width: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  @media only screen and (max-width: 400px) {
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-`;
-
 export const InfoSection = styled.div`
-  margin-left: auto;
   margin-right: auto;
 `;
 

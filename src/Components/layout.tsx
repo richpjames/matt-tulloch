@@ -13,8 +13,7 @@ import ProductsProvider from "./ProductsProvider";
 const PageWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: 100vw;
-  width: 95%;
+  max-width: 60rem;
   display: flex;
   flex-direction: column;
   align-items: center;
