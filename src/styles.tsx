@@ -4,7 +4,7 @@ import { background, text } from "./constants";
 export const GlobalStyle = createGlobalStyle`
 @font-face {
     font-family: "Recoleta";
-    src: url("http://richjames.co.uk/fonts/RecoletaAlt-Black.ttf");
+    src: url("../static/RecoletaAlt-Black.ttf");
 }
 
 :root{
