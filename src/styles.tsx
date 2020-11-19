@@ -1,14 +1,10 @@
 import { createGlobalStyle } from "styled-components/macro";
 import { background, text } from "./constants";
 
-export const GlobalStyle = createGlobalStyle`@font-face {
-    font-family: "GT America";
-    src: url(https://www.richjames.co.uk/fonts/gt-america-standard-regular-webfont.woff) format("woff");
-}
-
+export const GlobalStyle = createGlobalStyle`
 @font-face {
-    font-family: "Caslon";
-    src: url(https://www.monitorbooks.co.uk/ACaslonPro-Italic.otf) format("truetype");
+    font-family: "Recoleta";
+    src: url("http://richjames.co.uk/fonts/RecoletaAlt-Black.ttf");
 }
 
 :root{
@@ -17,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`@font-face {
 }
 
 body {
-    font-family: "GT America", sans-serif;
+    font-family:  sans-serif;
     padding: 0;
     margin: 0;
     background-color: var(--main-bg-colour);
@@ -27,23 +23,24 @@ h1 {
     font-size: clamp(32px, 2em, 2rem);
     display: inline;
     line-height: 2rem;
-    font-family: 'GT America', sans-serif;
+    font-family: 'Recoleta', sans-serif;
+    font-weight: 300;
 }
 
 h2 {
-   font-size:  1.7rem;
-   font-family: 'GT America', sans-serif;
+   font-size:  2rem;
+   font-family: 'Recoleta', sans-serif;
 }
 
 h3 {
     font-size:  1.45rem;
-    font-family: 'GT America', sans-serif;
+    font-family: 'Recoleta', sans-serif;
  }
 
 
 h4 {  
     font-size: 1.4em;
-    font-family: 'GT America', sans-serif;
+    font-family: 'Recoleta', sans-serif;
     font-weight: 100;
 
     }
@@ -76,7 +73,7 @@ p {
 button {
     background-color: var(--text-color);
     color: var(--main-bg-colour);
-    font-family: "GT America", sans-serif;
+    font-family: "Recoleta", sans-serif;
     font-size: 1rem;
     border: none;
 }`;
