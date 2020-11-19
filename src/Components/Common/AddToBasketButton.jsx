@@ -45,7 +45,7 @@ const AddToBasketButton = ({ id }) => {
         className="add-to-basket"
         // borderColour={borderColour}
       >
-        {"button"}
+        add to basket
       </ButtonStyles>
     </ButtonWrapper>
   );
