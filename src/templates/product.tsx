@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
+import styled from "styled-components/macro";
 
 import { Layout } from "../Components/layout";
 import {
@@ -10,6 +11,10 @@ import {
 } from "../Components/Common";
 
 import GatsbyImage from "gatsby-image";
+
+const ProductPageTitle = styled.h2`
+  align-self: flex-start;
+`;
 
 interface Props extends PageProps {
   photos: number[];
@@ -52,17 +57,16 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
     devPriceId,
   } = data.productsJson;
   const id = process.env.GATSBY_ENV === "production" ? prodPriceId : devPriceId;
-
   const { image } = data;
+
   return (
     <Layout>
       <SmallLogo />
-      <h2>{title}</h2>
       <GatsbyImage
         fluid={image.sharp.fluid}
-        alt="image"
-        style={{ height: " 200px", width: "200px" }}
+        alt={`a photo of ${title} print`}
       />
+      <ProductPageTitle>{title}</ProductPageTitle>
       <InfoSection>
         <Text text={blurb} />
         <AddToBasketButton id={id} />
