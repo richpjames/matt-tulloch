@@ -31,16 +31,18 @@ export const CheckoutSection: React.FC<Props> = ({
   const { cart, total } = useContext<BasketContext>(CartContext);
 
   const onCheckoutClicked = () => {
-    const lineItems = cart.map(([sku, quantity]) => ({
-      price: sku.id,
-      quantity,
-    }));
+    const lineItems = JSON.stringify(
+      cart.map(([sku, quantity]) => ({
+        price: sku.id,
+        quantity: `${quantity}`,
+      }))
+    );
 
     const stripePromise = loadStripe(stripePublishableKey || "");
 
     fetch("/.netlify/functions/create-checkout", {
       method: "POST",
-      body: JSON.stringify(lineItems),
+      body: lineItems,
     })
       .then(async (response) => {
         const { sessionId } = await response.json();

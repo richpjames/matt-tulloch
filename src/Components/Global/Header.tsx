@@ -36,43 +36,13 @@ export const Header = () => {
   return (
     <Nav>
       <NavLinks>
-        {navItems.map((navItem, index) => {
-          return (
-            <React.Fragment key={index}>
-              <NavItem key={index}>
-                <Link
-                  to={navItem.link}
-                  aria-label={navItem.ariaLabel}
-                  className={navItem.className}
-                >
-                  {navItem.content}
-                </Link>
-              </NavItem>
-            </React.Fragment>
-          );
-        })}
+        <NavItem aria-label="contact" className="contact">
+          <a href="mailto:contact@tulltulloch.com">contact</a>
+        </NavItem>
+        <NavItem aria-label="basket" className="basket">
+          <Link to="/basket">basket</Link>
+        </NavItem>
       </NavLinks>
     </Nav>
   );
 };
-
-const navItems = [
-  // {
-  //   link: "/shop",
-  //   ariaLabel: "Shop link",
-  //   content: "shop",
-  //   className: "shop",
-  // },
-  {
-    link: "mailto:contact@tulltulloch.com",
-    ariaLabel: "contact page",
-    content: "contact",
-    className: "contact",
-  },
-  {
-    link: "/basket",
-    ariaLabel: "Basket link",
-    content: "basket",
-    className: "basket",
-  },
-];
