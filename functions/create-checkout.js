@@ -7,10 +7,11 @@ exports.handler = async (event) => {
   console.log(JSON.parse(event.body));
   let stripe = devStripe;
   let publishableKey = process.env.GATSBY_DEV_STRIPE_PUBLISHABLE_KEY;
-  if (process.env.GATSBY_ENV === "production") {
+  if (process.env.NODE_ENV === "production") {
     stripe = prodStripe;
     publishableKey = process.env.GATSBY_PROD_STRIPE_PUBLISHABLE_KEY;
   }
+  console.log("node", process.env.NODE_ENV, "gatsby", process.env.GATSBY_ENV);
   try {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
