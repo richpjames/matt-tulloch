@@ -8,10 +8,12 @@ const Success: React.FC<RouteComponentProps> = () => {
   return (
     <Layout>
       <InfoSection>
-        {/* <PageTitle title="Success" /> */}
-        <Text
-          text={`<p>Everything went through ok.<br /> Thanks for your order. <br /> You will receive an email with details. <br /> For enquiries contact@monitorbooks.co.uk</p>`}
-        />
+        <h2>Success</h2>
+        <p>
+          Everything went through ok.
+          <br /> Thanks for your order. <br /> You will receive an email with
+          details. <br /> For enquiries contact@tulltulloch.co.uk
+        </p>
       </InfoSection>
     </Layout>
   );
