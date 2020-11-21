@@ -3,11 +3,13 @@ const devStripe = require("stripe")(process.env.GATSBY_DEV_STRIPE_SECRET_KEY);
 const prodStripe = require("stripe")(process.env.GATSBY_PROD_STRIPE_SECRET_KEY);
 
 exports.handler = async (event) => {
-  const products = JSON.parse(event.body);
+  const data = JSON.parse(event.body);
+  const { lineItems, env } = data;
   console.log(JSON.parse(event.body));
   let stripe = devStripe;
   let publishableKey = process.env.GATSBY_DEV_STRIPE_PUBLISHABLE_KEY;
-  if (process.env.NODE_ENV === "production") {
+
+  if (env === "production") {
     stripe = prodStripe;
     publishableKey = process.env.GATSBY_PROD_STRIPE_PUBLISHABLE_KEY;
   }
@@ -30,7 +32,7 @@ exports.handler = async (event) => {
       success_url: `${process.env.URL}/success`,
       cancel_url: process.env.URL,
 
-      line_items: products.map((product) => {
+      line_items: lineItems.map((product) => {
         const validatedQuantity =
           product.quantity > 0 && product.quantity < 11 ? product.quantity : 1;
 
