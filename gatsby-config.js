@@ -8,8 +8,14 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-typescript`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "./src/favicon.svg",
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
