@@ -33,6 +33,7 @@ exports.handler = async (event) => {
         return lineItem;
       }),
     });
+    console.log(session, "session");
     return {
       statusCode: 200,
       body: JSON.stringify({
