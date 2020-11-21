@@ -44,6 +44,6 @@ export const productPageImageWidth = "auto";
 
 //STRIPE
 export const stripePublishableKey =
-  process.env.NODE_ENV === "production"
+  process.env.GATSBY_ENV === "production"
     ? process.env.GATSBY_PROD_STRIPE_PUBLISHABLE_KEY
     : process.env.GATSBY_DEV_STRIPE_PUBLISHABLE_KEY;
