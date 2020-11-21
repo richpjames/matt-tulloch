@@ -4,7 +4,7 @@ const prodStripe = require("stripe")(process.env.GATSBY_PROD_STRIPE_SECRET_KEY);
 
 exports.handler = async (event) => {
   const products = JSON.parse(event.body);
-
+  console.log(JSON.parse(event.body));
   let stripe = devStripe;
   let publishableKey = process.env.GATSBY_DEV_STRIPE_PUBLISHABLE_KEY;
   if (process.env.GATSBY_ENV === "production") {
