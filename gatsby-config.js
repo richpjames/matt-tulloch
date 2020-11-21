@@ -13,7 +13,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "./src/favicon.svg",
+        icon: "./src/favicon.png",
       },
     },
     {
