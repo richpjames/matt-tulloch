@@ -19,7 +19,9 @@ const CartProvider = ({ children }) => {
     // Load cart from local storage. Initialize if not present or incorrect.
     let localCart;
     try {
-      localCart = JSON.parse(localStorage.getItem("cart") || "");
+      localCart = JSON.parse(
+        (typeof window !== undefined && localStorage.getItem("cart")) || ""
+      );
     } catch (err) {
       console.error(err.message);
     }
@@ -30,7 +32,8 @@ const CartProvider = ({ children }) => {
   // Save cart to local storage after load and on update
   useEffect(() => {
     try {
-      localStorage.setItem("cart", JSON.stringify(contents));
+      typeof window !== undefined &&
+        window.localStorage.setItem("cart", JSON.stringify(contents));
     } catch (err) {
       console.error(err);
     }

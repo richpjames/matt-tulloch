@@ -11,7 +11,14 @@ exports.handler = async (event) => {
     stripe = prodStripe;
     publishableKey = process.env.GATSBY_PROD_STRIPE_PUBLISHABLE_KEY;
   }
-  console.log("node", process.env.NODE_ENV, "gatsby", process.env.GATSBY_ENV);
+  console.log(
+    "node",
+    process.env.NODE_ENV,
+    "gatsby",
+    process.env.GATSBY_ENV,
+    " stripe",
+    stripe
+  );
   try {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",

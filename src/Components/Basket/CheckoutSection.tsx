@@ -47,7 +47,7 @@ export const CheckoutSection: React.FC<Props> = ({
       .then(async (response) => {
         const { sessionId } = await response.json();
         console.log("id", sessionId);
-        localStorage.setItem("cart", "{}");
+        typeof window !== undefined && localStorage.setItem("cart", "{}");
         const stripe = await stripePromise;
         if (stripe) {
           const stripeResponse = await stripe.redirectToCheckout({
