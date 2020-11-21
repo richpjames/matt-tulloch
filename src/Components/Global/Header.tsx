@@ -64,7 +64,7 @@ const navItems = [
   //   className: "shop",
   // },
   {
-    link: "/contact",
+    link: "mailto:contact@tulltulloch.com",
     ariaLabel: "contact page",
     content: "contact",
     className: "contact",
