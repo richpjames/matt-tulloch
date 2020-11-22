@@ -19,6 +19,28 @@ const ProductPageTitle = styled.h2`
 const ImageWrap = styled.div`
   padding: 3rem;
 `;
+
+const Seperator = styled.div`
+  height: 3rem;
+`;
+const ImageWrapper = styled.div<{ width: string }>`
+  height: auto;
+  width: ${({ width }) => width};
+`;
+const ImageSelector = styled.div`
+  height: 5rem;
+  width: 7.55rem;
+  font-size: 2.5rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+`;
+
+const LeftIcon = styled.span`
+  margin-left: auto;
+`;
+const RightIcon = styled.span``;
+
 interface Props extends PageProps {
   photos: number[];
   title: string;
@@ -27,11 +49,11 @@ interface Props extends PageProps {
   rightDescription: string;
   id: string;
   imagePath: string;
-  data: { productsJson: any; image: any };
+  data: { productsJson: any; images: { nodes: any } };
 }
 
 export const query = graphql`
-  query($slug: String!) {
+  query($slug: String!, $slugRegex: String!) {
     productsJson(slug: { eq: $slug }) {
       blurb
       devPriceId
@@ -41,16 +63,19 @@ export const query = graphql`
       title
       inventory
     }
-    image: file(name: { in: [$slug] }) {
-      sharp: childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid_withWebp_noBase64
+    images: allFile(filter: { relativePath: { regex: $slugRegex } }) {
+      nodes {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+            presentationWidth
+            presentationHeight
+          }
         }
       }
     }
   }
 `;
-
 const ProductPageTemplate = ({ data, pageContext }: Props) => {
   const {
     dimensions,
@@ -62,18 +87,39 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
     inventory,
   } = data.productsJson;
   const id = process.env.GATSBY_ENV === "production" ? prodPriceId : devPriceId;
-  const { image } = data;
+  const { images } = data;
 
   return (
     <Layout>
       <SmallLogo />
       <ImageWrap>
-        <GatsbyImage
-          fluid={image.sharp.fluid}
-          alt={`a photo of ${title} print`}
-          style={{ width: "60rem", height: "auto" }}
-        />
+        {images.nodes.map((image: any, index: number) => {
+          const { childImageSharp } = image;
+          let imageWidth = "500px";
+          if (
+            childImageSharp.fluid.presentationWidth >
+            childImageSharp.fluid.presentationHeight
+          ) {
+            imageWidth = "800px";
+          }
+          return (
+            <>
+              {index > 0 ? <Seperator key={index} /> : null}
+              <ImageWrapper width={imageWidth} key={index}>
+                <GatsbyImage
+                  key={index}
+                  fluid={childImageSharp.fluid}
+                  alt={`a photo of ${title} print`}
+                  style={{ width: imageWidth }}
+                />
+              </ImageWrapper>
+            </>
+          );
+        })}
       </ImageWrap>
+      {/* <ImageSelector>
+        <RightIcon>&#x02991;</RightIcon> <LeftIcon>&#x02992;</LeftIcon>
+      </ImageSelector> */}
       <ProductPageTitle>{title}</ProductPageTitle>
       <InfoSection>
         <p>{blurb}</p>
