@@ -1,6 +1,12 @@
 import React from "react";
+import styled from "styled-components/macro";
 import Image from "gatsby-image";
 import { useStaticQuery, graphql, Link } from "gatsby";
+
+const ImageWrapper = styled(Link)`
+  height: auto;
+  width: 15rem;
+`;
 
 const SmallLogo = () => {
   const { image } = useStaticQuery(graphql`
@@ -15,14 +21,9 @@ const SmallLogo = () => {
     }
   `);
   return (
-    <Link to="/">
-      <Image
-        style={{ height: "100%", width: "20rem" }}
-        fluid={image.sharp.fluid}
-        fadeIn={false}
-        alt="company logo"
-      />
-    </Link>
+    <ImageWrapper to="/">
+      <Image fluid={image.sharp.fluid} fadeIn={false} alt="company logo" />
+    </ImageWrapper>
   );
 };
 
