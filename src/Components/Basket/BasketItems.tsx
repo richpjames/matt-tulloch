@@ -22,7 +22,6 @@ type BasketItemsProps = {
   basketItems: JSX.Element[];
   shipping: Shipping;
   setShipping: (index: number) => void;
-  total: number;
 };
 
 export const BasketItems: React.FC<BasketItemsProps> = ({
@@ -30,7 +29,6 @@ export const BasketItems: React.FC<BasketItemsProps> = ({
   hasItems,
   setShipping,
   shipping,
-  total,
 }) => {
   const hasProducts = basketItems?.length > 0;
 
