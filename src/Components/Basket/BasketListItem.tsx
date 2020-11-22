@@ -38,13 +38,12 @@ export const BasketListItem: React.FC<Props> = ({
   index,
   title,
   image,
-  slug,
   id,
+  price,
   addToBasket,
   removeFromBasket,
   decrementInCart,
   quantity,
-  stock,
   dimensions,
 }) => {
   return (
@@ -62,6 +61,7 @@ export const BasketListItem: React.FC<Props> = ({
       <MetaInfoContainer index={index} width="40%">
         <ListItemTitle>{title}</ListItemTitle>
         <ListItemSubtitle>{dimensions}</ListItemSubtitle>
+        <ListItemSubtitle>{`£${price}`}</ListItemSubtitle>
         <QuantityPanel
           addToCart={() => addToBasket(id)}
           decrementInCart={() => decrementInCart(id)}

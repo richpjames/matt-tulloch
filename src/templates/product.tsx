@@ -103,17 +103,16 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
             imageWidth = "800px";
           }
           return (
-            <>
-              {index > 0 ? <Seperator key={index} /> : null}
-              <ImageWrapper width={imageWidth} key={index}>
+            <React.Fragment key={index}>
+              {index > 0 ? <Seperator /> : null}
+              <ImageWrapper width={imageWidth}>
                 <GatsbyImage
-                  key={index}
                   fluid={childImageSharp.fluid}
                   alt={`a photo of ${title} print`}
                   style={{ width: imageWidth }}
                 />
               </ImageWrapper>
-            </>
+            </React.Fragment>
           );
         })}
       </ImageWrap>

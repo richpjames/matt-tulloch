@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components/macro";
 
 import { text, background } from "../../constants";
-
 const Wrap = styled.section`
   display: flex;
   padding-bottom: 2.5rem;
   margin-top: auto;
+  width: 10rem;
   @media only screen and (max-width: 600px) {
     justify-content: center;
     width: 100%;
@@ -25,13 +25,17 @@ const ButtonWrapper = styled.div`
 const Quantity = styled.h5`
   margin-left: 0.5rem;
   margin-right: 0.5rem;
-  padding-top: 0.25rem;
   color: ${text};
 `;
 
 const QuantityLabel = styled(Quantity)``;
 
-const Button = styled.button``;
+const Button = styled.button`
+  color: ${text};
+  border: 1px solid ${text};
+  background: ${background};
+  line-height: 1px;
+`;
 
 const InnerButtonContent = styled.span`
   line-height: 1px;
