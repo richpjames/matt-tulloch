@@ -65,7 +65,7 @@ export const CheckoutSection: React.FC<Props> = ({
   return (
     <CheckoutSectionWrap>
       <Shipping shipping={shipping} setShipping={setShipping} />
-      <BasketTotal total={`${twoDecimalPlaces(+total + shipping.price)}`} />
+      <BasketTotal total={`${twoDecimalPlaces(total)}`} />
       <CTAButton onClick={onCheckoutClicked} disabled={!hasItems}>
         Checkout
       </CTAButton>
