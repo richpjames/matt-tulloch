@@ -19,7 +19,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: require.resolve("./src/templates/product.tsx"),
       context: {
         slug: `${product.slug}`,
-        slugRegex: `/${product.slug}/g`,
+        slugRegex: `/${product.slug}/`,
       },
     });
   });
