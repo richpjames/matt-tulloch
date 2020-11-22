@@ -54,7 +54,6 @@ const Basket = () => {
         hasItems={basketItems.length > 0}
         shipping={shipping}
         setShipping={setShipping}
-        total={total}
       />
     );
   } else if (loading) {
