@@ -3,48 +3,72 @@
     "title": "Catnipped",
     "blurb": "Heavyweight print - high quality 300gsm white recycled board - A premium recycled finish with a textured look.",
     "id": "A1",
-    "thumbnail": "2.jpg",
-    "price": "10",
+    "price": "15",
     "slug": "catnipped",
     "inventory": 20,
     "prodPriceId": "price_1HlKogI7nlRkVz3TcykbzQVe",
     "devPriceId": "price_1HoEjCI7nlRkVz3TLVys9OIx",
-    "dimensions": "20cm x 42cm"
+    "dimensions": "20cm x 42cm",
+    "images": ["catnipped-image.jpg", "catnipped-photo.jpg"]
   },
   {
     "title": "Crossland Bikes",
     "blurb": "Heavyweight print - 300gsm white recycled board - A premium recycled finish with a textured look",
     "id": "A2",
-    "thumbnail": "2.jpg",
-    "price": "10",
+    "price": "15",
     "slug": "crossland-bikes",
     "inventory": 20,
     "devPriceId": "price_1HoEiGI7nlRkVz3TkcJsv2M8",
     "prodPriceId": "price_1HlLDcI7nlRkVz3TgZIq5PXb",
-    "dimensions": "29cm x 42cm"
+    "dimensions": "29cm x 42cm",
+    "images": ["crossland-bikes-image.jpg", "crossland-bikes-photo.jpg"]
   },
   {
     "title": "Sister Apology",
     "blurb": "Heavyweight print - 300gsm white recycled board - A premium recycled finish with a textured look.",
     "id": "A3",
-    "thumbnail": "2.jpg",
-    "price": "10",
+    "price": "15",
     "slug": "sister-apology",
     "inventory": 20,
     "devPriceId": "price_1HoEhxI7nlRkVz3TO3ZdAoij",
     "prodPriceId": "price_1HlaF8I7nlRkVz3TLfoj5XZ5",
-    "dimensions": "29cm x 42cm"
+    "dimensions": "29cm x 42cm",
+    "images": ["sister-apology-image.jpg", "sister-apology-photo.jpg"]
   },
   {
     "title": "Please Hold",
     "blurb": "Heavyweight print on 300gsm white recycled board - A premium recycled finish with a textured look.",
     "id": "A4",
-    "thumbnail": "2.jpg",
-    "price": "10",
+    "price": "15",
     "slug": "please-hold",
     "inventory": 20,
     "devPriceId": "price_1HoEijI7nlRkVz3TCo5AhyzQ",
     "prodPriceId": "price_1HlL2NI7nlRkVz3T0nj1o4Bm",
-    "dimensions": "29cm x 29cm"
+    "dimensions": "29cm x 29cm",
+    "images": ["please-hold-image.jpg", "please-hold-photo.jpg"]
+  },
+  {
+    "title": "Rivington Pike",
+    "blurb": "Heavyweight print on 300gsm white recycled board - A premium recycled finish with a textured look.",
+    "id": "A5",
+    "price": "15",
+    "slug": "rivington-pike",
+    "inventory": 20,
+    "devPriceId": "price_1HqNVdI7nlRkVz3T1ZJMUEOK",
+    "prodPriceId": "price_1HqOUmI7nlRkVz3TrgUrXvWF",
+    "dimensions": "29cm x 42cm",
+    "images": ["rivington-pike-image.jpg", "rivington-pike-photo.jpg"]
+  },
+  {
+    "title": "Christmas Advert",
+    "blurb": "Heavyweight print on 300gsm white recycled board - A premium recycled finish with a textured look.",
+    "id": "A6",
+    "price": "15",
+    "slug": "christmas-advert",
+    "inventory": 20,
+    "devPriceId": "price_1Hq18oI7nlRkVz3T2wpXyg9U",
+    "prodPriceId": "price_1HqOkSI7nlRkVz3T8SAEVVeQ",
+    "dimensions": "14.8 x 14.8cm",
+    "images": ["christmas-advert-image.jpg", "christmas-advert-photo.jpg"]
   }
 ]
