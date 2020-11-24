@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components/macro";
+import { useStaticQuery, graphql } from "gatsby";
 
 import { useSiteMetadata } from "../hooks/use-sitemetadata";
 
@@ -9,6 +10,7 @@ import CartProvider from "./Basket/CartProvider";
 import { Footer } from "./Global/Footer";
 import { Header } from "./Global/Header";
 import ProductsProvider from "./ProductsProvider";
+import BackgroundImage from "gatsby-background-image";
 
 const PageWrap = styled.div`
   margin-left: auto;
@@ -27,6 +29,17 @@ const PageWrap = styled.div`
 
 export const Layout: React.FC = ({ children }) => {
   const { title, description } = useSiteMetadata();
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "background.jpg" }) {
+        sharp: childImageSharp {
+          fluid(quality: 90, maxWidth: 1920) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `);
   return (
     <>
       <ProductsProvider>
@@ -37,8 +50,19 @@ export const Layout: React.FC = ({ children }) => {
             <title>{title}</title>
             <meta name="description" content={description} />
           </Helmet>
-          <Header />
           <main>
+            <Header />
+            <BackgroundImage
+              fluid={image.sharp.fluid}
+              Tag="section"
+              style={{
+                width: "100%",
+                height: "100vh",
+                position: "absolute",
+                top: 0,
+                zIndex: -1,
+              }}
+            />
             <PageWrap>{children}</PageWrap>
           </main>
           <Footer />
