@@ -32,8 +32,8 @@ export const shippingCosts: Shipping[] =
     : devShippingCosts;
 
 //COLOUR USAGE
-export const text = "#37353a";
-export const background = "#fefefe";
+export const text = "#fefefe";
+export const background = "#141315";
 
 //URLS
 export const mainImageUrl = `https://www.monitorbooks.co.uk/img/`;
