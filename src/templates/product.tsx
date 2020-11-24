@@ -16,31 +16,24 @@ const ProductPageTitle = styled.h2`
   align-self: flex-start;
 `;
 
-const ImageWrap = styled.div`
+const ImagesWrap = styled.div`
   padding: 3rem;
+  @media only screen and (max-width: 800px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `;
 
 const Seperator = styled.div`
   height: 3rem;
 `;
-const ImageWrapper = styled.div<{ width: string }>`
+const ImageWrapper = styled.div`
   height: auto;
-  width: ${({ width }) => width};
+  width: 55vw;
+  @media only screen and (max-width: 800px) {
+    width: 95vw;
+  }
 `;
-const ImageSelector = styled.div`
-  height: 5rem;
-  width: 7.55rem;
-  font-size: 2.5rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-`;
-
-const LeftIcon = styled.span`
-  margin-left: auto;
-`;
-const RightIcon = styled.span``;
-
 interface Props extends PageProps {
   photos: number[];
   title: string;
@@ -90,43 +83,37 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
   const { images } = data;
 
   return (
-    <Layout>
-      <SmallLogo />
-      <ImageWrap>
-        {images.nodes.map((image: any, index: number) => {
-          const { childImageSharp } = image;
-          let imageWidth = "500px";
-          if (
-            childImageSharp.fluid.presentationWidth >
-            childImageSharp.fluid.presentationHeight
-          ) {
-            imageWidth = "800px";
-          }
-          return (
-            <React.Fragment key={index}>
-              {index > 0 ? <Seperator /> : null}
-              <ImageWrapper width={imageWidth}>
-                <GatsbyImage
-                  fluid={childImageSharp.fluid}
-                  alt={`a photo of ${title} print`}
-                  style={{ width: imageWidth }}
-                />
-              </ImageWrapper>
-            </React.Fragment>
-          );
-        })}
-      </ImageWrap>
-      {/* <ImageSelector>
-        <RightIcon>&#x02991;</RightIcon> <LeftIcon>&#x02992;</LeftIcon>
-      </ImageSelector> */}
-      <ProductPageTitle>{title}</ProductPageTitle>
-      <InfoSection>
-        <p>{blurb}</p>
-        <p>{dimensions}</p>
-        <p>£{price}</p>
-        <AddToBasketButton id={id} inventory={inventory} />
-      </InfoSection>
-    </Layout>
+    <>
+      <Layout>
+        <SmallLogo />
+        <ImagesWrap>
+          {images.nodes.map((image: any, index: number) => {
+            const { childImageSharp } = image;
+
+            return (
+              <React.Fragment key={index}>
+                {index > 0 ? <Seperator /> : null}
+                <ImageWrapper>
+                  <GatsbyImage
+                    fluid={childImageSharp.fluid}
+                    alt={`a photo of ${title} print`}
+                  />
+                </ImageWrapper>
+              </React.Fragment>
+            );
+          })}
+        </ImagesWrap>
+
+        <ProductPageTitle>{title}</ProductPageTitle>
+
+        <InfoSection>
+          <p>{blurb}</p>
+          <p>{dimensions}</p>
+          <p>£{price}</p>
+          <AddToBasketButton id={id} inventory={inventory} />
+        </InfoSection>
+      </Layout>
+    </>
   );
 };
 export default ProductPageTemplate;
