@@ -32,7 +32,7 @@ export const shippingCosts: Shipping[] =
     : devShippingCosts;
 
 //COLOUR USAGE
-export const text = "#fefefe";
+export const text = "#f8efc3";
 export const background = "#141315";
 
 //URLS
