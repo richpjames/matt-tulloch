@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby";
 const BigLogo = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "tullochlogo.png" }) {
+      image: file(relativePath: { eq: "tullltulloch-gold-logo.png" }) {
         sharp: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -16,7 +16,7 @@ const BigLogo = () => {
   `);
   return (
     <Image
-      style={{ height: "75%", width: "75%" }}
+      style={{ width: "min(55vw, 800px)" }}
       fluid={image.sharp.fluid}
       fadeIn={false}
       alt="company logo"

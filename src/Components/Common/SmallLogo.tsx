@@ -11,7 +11,7 @@ const ImageWrapper = styled(Link)`
 const SmallLogo = () => {
   const { image } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "tullochlogo.png" }) {
+      image: file(relativePath: { eq: "tullltulloch-gold-logo.png" }) {
         sharp: childImageSharp {
           fluid {
             ...GatsbyImageSharpFluid_withWebp_noBase64
