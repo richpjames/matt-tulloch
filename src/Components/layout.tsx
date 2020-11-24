@@ -13,15 +13,15 @@ import ProductsProvider from "./ProductsProvider";
 const PageWrap = styled.div`
   margin-left: auto;
   margin-right: auto;
-  max-width: 60rem;
+  max-width: 55vw;
   display: flex;
   flex-direction: column;
   align-items: center;
-  @media only screen and (min-width: 600px) {
-    width: 60%;
+  @media only screen and (max-width: 600px) {
+    width: 80%;
   }
   @media only screen and (min-width: 400px) {
-    width: 80%;
+    width: 90%;
   }
 `;
 
