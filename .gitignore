@@ -9,5 +9,5 @@ applitools_key.ts
 cypress/videos/*
 
 # Gatsby
-public/**
+public/**/*
 .cache
