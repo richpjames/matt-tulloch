@@ -23,7 +23,9 @@ export const ListItemContainerWrap = styled.div<ListItemContainerProps>`
   margin-left: ${(props) => props.horizontalMargin};
   margin-right: ${(props) => props.horizontalMargin};
   margin-top: ${(props) => (props.index < 1 ? "0" : props.topMargin)};
-  border: 0.5rem solid ${text};
+  border-top: 0.25rem solid ${text};
+  border-bottom: 0.25rem solid ${text};
+
   @media only screen and (max-width: 600px) {
     flex-direction: column;
     padding-left: 0;
@@ -93,7 +95,7 @@ export const ListItemPhotoWrap = styled.div<{ width: string }>`
   }
 `;
 
-export const Photo = styled(Image)<{ fluid: any }>`
+export const Photo = styled(Image)<{ fixed: any }>`
   width: 100%;
   height: 100%;
   object-fit: cover;
