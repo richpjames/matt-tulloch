@@ -65,9 +65,15 @@ const processGatsbyData = (data) => {
     } = productData;
     const id =
       process.env.GATSBY_ENV === "production" ? prodPriceId : devPriceId;
-    const imageQuery = new RegExp(String.raw`${slug}`);
+    const imageQuery = new RegExp(String.raw`${slug}-image`);
+    const photoQuery = new RegExp(String.raw`${slug}-photo`);
+
     const image = allImageSharp.nodes.find((image) =>
       imageQuery.test(image.fluid.src)
+    );
+
+    const photo = allImageSharp.nodes.find((image) =>
+      photoQuery.test(image.fluid.src)
     );
     const product = {
       price: +price,
@@ -76,6 +82,7 @@ const processGatsbyData = (data) => {
       dimensions,
       slug,
       image,
+      photo,
       id,
     };
 
