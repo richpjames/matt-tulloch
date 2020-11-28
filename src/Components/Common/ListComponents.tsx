@@ -86,8 +86,6 @@ export const ListItemPhotoWrap = styled.div<{ width: string; height: string }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ${background};
-
   @media only screen and (max-width: 600px) {
     width: 100%;
   }
