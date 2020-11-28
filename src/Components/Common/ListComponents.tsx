@@ -10,7 +10,6 @@ interface ListItemContainerProps {
   height: string;
   width: string;
   horizontalMargin: string;
-  topMargin: string;
   to?: string;
   className?: string;
 }
@@ -22,7 +21,6 @@ export const ListItemContainerWrap = styled.div<ListItemContainerProps>`
   width: ${(props) => props.width};
   margin-left: ${(props) => props.horizontalMargin};
   margin-right: ${(props) => props.horizontalMargin};
-  margin-top: ${(props) => (props.index < 1 ? "0" : props.topMargin)};
   border-top: 0.25rem solid ${text};
   border-bottom: 0.25rem solid ${text};
 
@@ -83,23 +81,26 @@ export const ListItemSubtitle = styled.h4`
   text-align: center;
 `;
 
-export const ListItemPhotoWrap = styled.div<{ width: string }>`
-  width: ${(props) => props.width};
-  height: auto;
+export const ListItemPhotoWrap = styled.div<{ width: string; height: string }>`
+  width: ${(props) => props.width && props.width};
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: ${background};
+
   @media only screen and (max-width: 600px) {
     width: 100%;
   }
 `;
 
-export const Photo = styled(Image)<{ fixed: any }>`
+export const Photo = styled(Image)<{ fluid: any }>`
   width: 100%;
   height: 100%;
   object-fit: cover;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media only screen and (max-width: 600px) {
     max-height: 100vw;
