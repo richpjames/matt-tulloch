@@ -30,17 +30,30 @@ export const ListItem: React.FC<ListItemProps> = ({
   addToBasket,
   dimensions,
 }) => {
+  let width = "100%";
+  if (image.fluid.aspectRatio > 1) {
+    //landscape
+    width = "100%";
+  } else if (image.fluid.aspectRatio === 1) {
+    width = "15rem";
+  }
   return (
     <ListItemContainer
       index={index}
-      height="20%"
+      height="20rem"
       width="100%"
       horizontalMargin="0"
-      topMargin="2rem"
       className={title}
     >
-      <ListItemPhotoWrap width="30%">
-        <ListItemPhoto fixed={image.fixed} alt={`${title} print image`} />
+      <ListItemPhotoWrap width={"15rem"} height={"17rem"}>
+        <ListItemPhoto
+          fluid={image.fluid}
+          style={{
+            height: "auto",
+            width: width,
+          }}
+          alt={`${title} print image`}
+        />
       </ListItemPhotoWrap>
       <MetaInfoContainer index={index} width="40%">
         <ListItemTitle>{title}</ListItemTitle>
