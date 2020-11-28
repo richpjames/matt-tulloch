@@ -30,18 +30,18 @@ export const ListItem: React.FC<ListItemProps> = ({
   addToBasket,
   dimensions,
 }) => {
-  let width;
+  let width = "100%";
+
   // has to be initialised with a value for typescript reasons
   let containerHeight = "0rem";
-
+  let photoWrapWidth = "15rem";
   if (image.fluid.aspectRatio < 1) {
     //portrait
-    width = "100%";
-    containerHeight = "30rem";
+    containerHeight = "25rem";
   } else if (image.fluid.aspectRatio > 1) {
     //landscape
     containerHeight = "15rem";
-    width = "100%";
+    photoWrapWidth = "18rem";
   } else if (image.fluid.aspectRatio === 1) {
     //square
     containerHeight = "20rem";
@@ -55,7 +55,7 @@ export const ListItem: React.FC<ListItemProps> = ({
       horizontalMargin="0"
       className={title}
     >
-      <ListItemPhotoWrap width={"15rem"} height={"17rem"}>
+      <ListItemPhotoWrap width={photoWrapWidth} height={"17rem"}>
         <ListItemPhoto
           fluid={image.fluid}
           style={{
