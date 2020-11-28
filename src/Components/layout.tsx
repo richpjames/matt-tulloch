@@ -20,7 +20,7 @@ const PageWrap = styled.div`
   flex-direction: column;
   align-items: center;
   @media only screen and (max-width: 600px) {
-    width: 80%;
+    max-width: 90%;
   }
   @media only screen and (min-width: 400px) {
     width: 90%;

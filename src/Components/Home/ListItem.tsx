@@ -8,7 +8,17 @@ import {
   ListItemSubtitle,
   ListItemPhotoWrap,
   ListItemPhoto,
+  AddToBasketButton,
 } from "../Common";
+
+const ButtonContainer = styled.div`
+  padding: 0.5rem;
+`;
+
+const ButtonCaption = styled(ListItemSubtitle)`
+  padding: 0.5rem;
+  text-align: center;
+`;
 
 interface ListItemProps {
   addToBasket: (id: string) => void;
@@ -27,35 +37,33 @@ export const ListItem: React.FC<ListItemProps> = ({
   image,
   id,
   price,
+  slug,
   addToBasket,
   dimensions,
 }) => {
   let width = "100%";
 
   // has to be initialised with a value for typescript reasons
-  let containerHeight = "0rem";
-  let photoWrapWidth = "15rem";
-  if (image.fluid.aspectRatio < 1) {
-    //portrait
-    containerHeight = "25rem";
-  } else if (image.fluid.aspectRatio > 1) {
-    //landscape
-    containerHeight = "15rem";
-    photoWrapWidth = "18rem";
-  } else if (image.fluid.aspectRatio === 1) {
-    //square
-    containerHeight = "20rem";
-    width = "15rem";
-  }
+  // let photoWrapWidth = "";
+  // if (image.fluid.aspectRatio < 1) {
+  //   photoWrapWidth = "15rem";
+  //   //portrait
+  // } else if (image.fluid.aspectRatio > 1) {
+  //   //landscape
+  //   photoWrapWidth = "18rem";
+  // } else if (image.fluid.aspectRatio === 1) {
+  //   //square
+  //   width = "15rem";
+  // }
   return (
     <ListItemContainer
       index={index}
-      height={containerHeight}
       width="100%"
       horizontalMargin="0"
       className={title}
+      to={`prints/${slug}`}
     >
-      <ListItemPhotoWrap width={photoWrapWidth} height={"17rem"}>
+      <ListItemPhotoWrap width={"30%"} height={"17rem"}>
         <ListItemPhoto
           fluid={image.fluid}
           style={{
@@ -65,11 +73,15 @@ export const ListItem: React.FC<ListItemProps> = ({
           alt={`${title} print image`}
         />
       </ListItemPhotoWrap>
-      <MetaInfoContainer index={index} width="40%">
+      <MetaInfoContainer index={index} width="30%">
         <ListItemTitle>{title}</ListItemTitle>
         <ListItemSubtitle>{dimensions}</ListItemSubtitle>
         <ListItemSubtitle>{`£${price}`}</ListItemSubtitle>
       </MetaInfoContainer>
+      <ButtonContainer>
+        <AddToBasketButton id={id} inventory={5}></AddToBasketButton>
+        <ButtonCaption>QUANTITY + 1</ButtonCaption>
+      </ButtonContainer>
     </ListItemContainer>
   );
 };

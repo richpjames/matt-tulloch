@@ -6,6 +6,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: "Recoleta";
     src: url(${process.env.URL}/RecoletaAlt-Black.ttf);
 }
+@font-face {
+    font-family: "RecoletaLight";
+    src: url(${process.env.URL}/RecoletaAlt-Light.woff);
+}
 
 :root{
     --main-bg-colour: ${background};
@@ -33,14 +37,15 @@ h2 {
 }
 
 h3 {
-    font-size:  1.45rem;
-    font-family: 'Recoleta', sans-serif;
+    font-size:  1.4rem;
+    font-family: 'RecoletaLight', sans-serif;
+    font-weight: 700;
  }
 
 
 h4 {  
-    font-size: 1.2em;
-    font-family: sans-serif;
+    font-size: 1em;
+    font-family: 'RecoletaLight', sans-serif;
     }
 
 h5 {  font-size: .95em;    }

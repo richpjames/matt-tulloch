@@ -12,12 +12,15 @@ const ButtonStyles = styled.button<{
   height: 40px;
   background: ${({ backgroundColour }) => backgroundColour};
   color: ${({ textColour }) => textColour};
-  border: ${({ borderColour }) =>
-    `1px solid ${borderColour ? borderColour : text}`};
+  font-weight: 200;
 `;
 
 const ButtonWrapper = styled.div`
   padding-top: 1rem;
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 interface AddToBasketButtonProps {
@@ -32,15 +35,13 @@ const AddToBasketButton: React.FC<AddToBasketButtonProps> = ({
   const { add, get } = useContext(CartContext);
   const cartQuantity = get(id);
   const inCart = cartQuantity > 0;
-  let backgroundColour = `${background}`;
-  let textColour = `${text}`;
+  let backgroundColour = `${text}`;
+  let textColour = `${background}`;
 
   let buttonMessage = "add to basket";
 
   if (inCart) {
     buttonMessage = "in basket";
-    textColour = `${background}`;
-    backgroundColour = `${text}`;
   } else if (inventory < 1) {
     buttonMessage = "pre-order";
   }
