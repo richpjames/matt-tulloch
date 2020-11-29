@@ -15,6 +15,7 @@ const GridWrapper = styled.div`
   padding: 3rem;
   @media only screen and (max-width: 600px) {
     grid-template-columns: 1fr;
+    padding: 1rem;
   }
 `;
 
