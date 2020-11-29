@@ -18,6 +18,7 @@ const ProductPageTitle = styled.h2`
 
 const ImagesWrap = styled.div`
   padding: 3rem;
+  display: flex;
   @media only screen and (max-width: 800px) {
     padding-left: 0;
     padding-right: 0;
@@ -92,11 +93,12 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
 
             return (
               <React.Fragment key={index}>
-                {index > 0 ? <Seperator /> : null}
+                {/* {index > 0 ? <Seperator /> : null} */}
                 <ImageWrapper>
                   <GatsbyImage
                     fluid={childImageSharp.fluid}
                     alt={`a photo of ${title} print`}
+                    imgStyle={{ padding: "1rem" }}
                   />
                 </ImageWrapper>
               </React.Fragment>

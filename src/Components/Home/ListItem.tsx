@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { QuantityPanel } from "../Basket/QuantityPanel";
 
 import {
   ListItemContainer,
@@ -80,7 +81,7 @@ export const ListItem: React.FC<ListItemProps> = ({
       </MetaInfoContainer>
       <ButtonContainer>
         <AddToBasketButton id={id} inventory={5}></AddToBasketButton>
-        <ButtonCaption>QUANTITY + 1</ButtonCaption>
+        {/* <QuantityPanel> </QuantityPanel> */}
       </ButtonContainer>
     </ListItemContainer>
   );

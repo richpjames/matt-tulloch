@@ -16,7 +16,7 @@ const BigLogo = () => {
   `);
   return (
     <Image
-      style={{ width: "min(55vw, 800px)" }}
+      style={{ width: "min(55vw, 550px)" }}
       fluid={image.sharp.fluid}
       fadeIn={false}
       alt="company logo"

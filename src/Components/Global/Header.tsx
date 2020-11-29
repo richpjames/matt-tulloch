@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components/macro";
 import { Link } from "gatsby";
+import { CartContext } from "../Basket/CartProvider";
 
 const Nav = styled.nav`
   display: flex;
@@ -27,12 +28,13 @@ const NavItem = styled.li`
   padding-right: 1rem;
   display: inline;
   @media only screen and (min-width: 600px) {
-    padding-left: 0.5rem;
+    padding-left: 0.5rem
     padding-right: 0.5rem;
   }
 `;
 
 export const Header = () => {
+  const { count } = useContext(CartContext);
   return (
     <Nav>
       <NavLinks>
@@ -41,6 +43,8 @@ export const Header = () => {
         </NavItem>
         <NavItem aria-label="basket" className="basket">
           <Link to="/basket">basket</Link>
+          <br></br>
+          count: {`${count}`}
         </NavItem>
       </NavLinks>
     </Nav>

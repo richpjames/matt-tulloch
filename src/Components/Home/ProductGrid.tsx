@@ -12,6 +12,7 @@ const GridWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  padding: 3rem;
   @media only screen and (max-width: 600px) {
     grid-template-columns: 1fr;
   }

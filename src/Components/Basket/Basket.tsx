@@ -11,7 +11,7 @@ import { BasketItems } from "./BasketItems";
 import { CartContext } from "./CartProvider";
 
 const BasketWrapper = styled.section`
-  width: 60rem;
+  width: 90%;
 `;
 
 const Basket = () => {

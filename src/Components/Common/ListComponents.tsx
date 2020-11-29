@@ -19,7 +19,7 @@ export const ListItemContainerWrap = styled.div<ListItemContainerProps>`
   margin-left: ${(props) => props.horizontalMargin};
   margin-right: ${(props) => props.horizontalMargin};
   border-top: 0.25rem solid ${text};
-  border-bottom: 0.25rem solid ${text};
+  /* border-bottom: 0.25rem solid ${text}; */
   padding: 2rem;
   @media only screen and (max-width: 600px) {
     flex-direction: column;
