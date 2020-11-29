@@ -2,6 +2,8 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components/macro";
 import { useStaticQuery, graphql } from "gatsby";
+import MouseParticles from "react-mouse-particles";
+import BackgroundImage from "gatsby-background-image";
 
 import { useSiteMetadata } from "../hooks/use-sitemetadata";
 
@@ -10,7 +12,6 @@ import CartProvider from "./Basket/CartProvider";
 import { Footer } from "./Global/Footer";
 import { Header } from "./Global/Header";
 import ProductsProvider from "./ProductsProvider";
-import BackgroundImage from "gatsby-background-image";
 
 const PageWrap = styled.div`
   margin-left: auto;
@@ -51,7 +52,8 @@ export const Layout: React.FC = ({ children }) => {
             <meta name="description" content={description} />
           </Helmet>
           <main>
-            <Header />
+            <MouseParticles num={50} g={25} radius={1} v={20} color="#f5edae" />
+            <Header />0
             <BackgroundImage
               fluid={image.sharp.fluid}
               Tag="section"
