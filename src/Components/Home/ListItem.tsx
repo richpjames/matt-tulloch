@@ -16,11 +16,6 @@ const ButtonContainer = styled.div`
   padding: 0.5rem;
 `;
 
-const ButtonCaption = styled(ListItemSubtitle)`
-  padding: 0.5rem;
-  text-align: center;
-`;
-
 interface ListItemProps {
   addToBasket: (id: string) => void;
   id: string;
@@ -42,20 +37,6 @@ export const ListItem: React.FC<ListItemProps> = ({
   addToBasket,
   dimensions,
 }) => {
-  let width = "100%";
-
-  // has to be initialised with a value for typescript reasons
-  // let photoWrapWidth = "";
-  // if (image.fluid.aspectRatio < 1) {
-  //   photoWrapWidth = "15rem";
-  //   //portrait
-  // } else if (image.fluid.aspectRatio > 1) {
-  //   //landscape
-  //   photoWrapWidth = "18rem";
-  // } else if (image.fluid.aspectRatio === 1) {
-  //   //square
-  //   width = "15rem";
-  // }
   return (
     <ListItemContainer
       index={index}
@@ -64,12 +45,12 @@ export const ListItem: React.FC<ListItemProps> = ({
       className={title}
       to={`prints/${slug}`}
     >
-      <ListItemPhotoWrap width={"30%"} height={"17rem"}>
+      <ListItemPhotoWrap width={"30%"}>
         <ListItemPhoto
           fluid={image.fluid}
           style={{
             height: "auto",
-            width: width,
+            width: "100%",
           }}
           alt={`${title} print image`}
         />
@@ -79,7 +60,7 @@ export const ListItem: React.FC<ListItemProps> = ({
         <ListItemSubtitle>{dimensions}</ListItemSubtitle>
         <ListItemSubtitle>{`£${price}`}</ListItemSubtitle>
       </MetaInfoContainer>
-      <ButtonContainer>
+      <ButtonContainer onClick={(e) => e.stopPropagation()}>
         <AddToBasketButton id={id} inventory={5}></AddToBasketButton>
         {/* <QuantityPanel> </QuantityPanel> */}
       </ButtonContainer>
