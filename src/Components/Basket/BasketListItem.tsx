@@ -49,10 +49,8 @@ export const BasketListItem: React.FC<Props> = ({
   return (
     <ListItemContainer
       index={index}
-      height="20%"
       width="100%"
       horizontalMargin="5rem"
-      topMargin="2rem"
       className={title}
     >
       <ListItemPhotoWrap width="30%">
