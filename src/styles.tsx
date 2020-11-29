@@ -21,6 +21,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: var(--main-bg-colour);
+    cursor: pointer;
 }
 
 h1 {
