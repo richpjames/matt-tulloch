@@ -26,6 +26,7 @@
     "gatsby-source-filesystem": "^2.6.0",
     "gatsby-transformer-json": "^2.6.0",
     "gatsby-transformer-sharp": "^2.7.0",
+    "grommet-icons": "^4.5.0",
     "react": "^17.0.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
