@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import styled from "styled-components/macro";
 import { Link } from "gatsby";
-import { CartContext } from "../Basket/CartProvider";
 
+import { CartContext } from "../Basket/CartProvider";
+import { BasketIcon } from "./BasketIcon";
 const Nav = styled.nav`
   display: flex;
   padding-bottom: 0.5rem;
@@ -28,13 +29,12 @@ const NavItem = styled.li`
   padding-right: 1rem;
   display: inline;
   @media only screen and (min-width: 600px) {
-    padding-left: 0.5rem
+    padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
 `;
 
 export const Header = () => {
-  const { count } = useContext(CartContext);
   return (
     <Nav>
       <NavLinks>
@@ -42,9 +42,9 @@ export const Header = () => {
           <a href="mailto:contact@tulltulloch.com">contact</a>
         </NavItem>
         <NavItem aria-label="basket" className="basket">
-          <Link to="/basket">basket</Link>
-          <br></br>
-          count: {`${count}`}
+          <Link to="/basket">
+            <BasketIcon />
+          </Link>
         </NavItem>
       </NavLinks>
     </Nav>
