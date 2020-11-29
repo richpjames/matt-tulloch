@@ -1,7 +1,7 @@
 [
   {
     "title": "Catnipped",
-    "blurb": "Heavyweight print - high quality 300gsm white recycled board - A premium recycled finish with a textured look.",
+    "blurb": "Heavyweight print on high quality 300gsm white recycled board<br />A premium recycled finish with a textured look.",
     "id": "A1",
     "price": "15",
     "slug": "catnipped",
@@ -14,7 +14,7 @@
   },
   {
     "title": "Crossland Bikes",
-    "blurb": "Heavyweight print - 300gsm white recycled board - A premium recycled finish with a textured look",
+    "blurb": "Heavyweight print on 300gsm white recycled board<br />A premium recycled finish with a textured look",
     "id": "A2",
     "price": "15",
     "slug": "crossland-bikes",
@@ -27,7 +27,7 @@
   },
   {
     "title": "Sister Apology",
-    "blurb": "Heavyweight print - 300gsm white recycled board - A premium recycled finish with a textured look.",
+    "blurb": "Heavyweight print on 300gsm white recycled board<br />A premium recycled finish with a textured look.",
     "id": "A3",
     "price": "15",
     "slug": "sister-apology",
@@ -40,7 +40,7 @@
   },
   {
     "title": "Please Hold",
-    "blurb": "Heavyweight print on 300gsm white recycled board - A premium recycled finish with a textured look.",
+    "blurb": "Heavyweight print on 300gsm white recycled board<br />A premium recycled finish with a textured look.",
     "id": "A4",
     "price": "15",
     "slug": "please-hold",
@@ -53,7 +53,7 @@
   },
   {
     "title": "Rivington Pike",
-    "blurb": "Heavyweight print on 300gsm white recycled board - A premium recycled finish with a textured look.",
+    "blurb": "Heavyweight print on 300gsm white recycled board <br />A premium recycled finish with a textured look.",
     "id": "A5",
     "price": "15",
     "slug": "rivington-pike",
@@ -66,7 +66,7 @@
   },
   {
     "title": "Christmas Advert",
-    "blurb": "Heavyweight print on 300gsm white recycled board - A premium recycled finish with a textured look.",
+    "blurb": "Heavyweight print on 300gsm white recycled board<br />A premium recycled finish with a textured look.",
     "id": "A6",
     "price": "5",
     "slug": "christmas-advert",

@@ -16,24 +16,24 @@ const ProductPageTitle = styled.h2`
   align-self: flex-start;
 `;
 
-const ImagesWrap = styled.div`
-  padding: 3rem;
+const ImagesWrap = styled.section`
   display: flex;
+  padding-bottom: 3rem;
+  padding-top: 3rem;
   @media only screen and (max-width: 800px) {
     padding-left: 0;
     padding-right: 0;
   }
 `;
 
-const Seperator = styled.div`
-  height: 3rem;
-`;
-const ImageWrapper = styled.div`
-  height: auto;
-  width: 55vw;
+const ImageWrapper = styled.div<{ width: string }>`
+  width: ${({ width }) => width};
   @media only screen and (max-width: 800px) {
     width: 95vw;
   }
+`;
+const PageWrap = styled.div`
+  max-width: 800px;
 `;
 interface Props extends PageProps {
   photos: number[];
@@ -82,38 +82,35 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
   } = data.productsJson;
   const id = process.env.GATSBY_ENV === "production" ? prodPriceId : devPriceId;
   const { images } = data;
+  const image = images.nodes[0].childImageSharp;
+  let width = "55vw";
+  if (image.fluid.aspectRatio <= 1) {
+    width = "30rem";
+  }
 
   return (
     <>
       <Layout>
         <SmallLogo />
-        <ImagesWrap>
-          {images.nodes.map((image: any, index: number) => {
-            const { childImageSharp } = image;
+        <PageWrap>
+          <ImagesWrap>
+            <ImageWrapper width={width}>
+              <GatsbyImage
+                fluid={image.fluid}
+                alt={`a photo of ${title} print`}
+              />
+            </ImageWrapper>
+          </ImagesWrap>
 
-            return (
-              <React.Fragment key={index}>
-                {/* {index > 0 ? <Seperator /> : null} */}
-                <ImageWrapper>
-                  <GatsbyImage
-                    fluid={childImageSharp.fluid}
-                    alt={`a photo of ${title} print`}
-                    imgStyle={{ padding: "1rem" }}
-                  />
-                </ImageWrapper>
-              </React.Fragment>
-            );
-          })}
-        </ImagesWrap>
+          <ProductPageTitle>{title}</ProductPageTitle>
 
-        <ProductPageTitle>{title}</ProductPageTitle>
-
-        <InfoSection>
-          <p>{blurb}</p>
-          <p>{dimensions}</p>
-          <p>£{price}</p>
-          <AddToBasketButton id={id} inventory={inventory} />
-        </InfoSection>
+          <InfoSection>
+            <p dangerouslySetInnerHTML={{ __html: blurb }}></p>
+            <p>{dimensions}</p>
+            <p>£{price}</p>
+            <AddToBasketButton id={id} inventory={inventory} />
+          </InfoSection>
+        </PageWrap>
       </Layout>
     </>
   );
