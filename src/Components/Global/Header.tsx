@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components/macro";
 import { Link } from "gatsby";
 
-import { CartContext } from "../Basket/CartProvider";
 import { BasketIcon } from "./BasketIcon";
+
 const Nav = styled.nav`
   display: flex;
   padding-bottom: 0.5rem;

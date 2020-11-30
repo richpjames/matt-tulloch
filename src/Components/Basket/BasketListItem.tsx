@@ -4,7 +4,7 @@ import styled from "styled-components/macro";
 
 import { QuantityPanel } from "./QuantityPanel";
 import {
-  ListItemContainer,
+  BasketListItemContainer,
   MetaInfoContainer,
   ListItemTitle,
   ListItemSubtitle,
@@ -17,6 +17,8 @@ const RemoveFromCartButton = styled.button`
   top: 0;
   position: absolute;
   font-size: 0.75em;
+  margin-top: -2rem;
+  margin-right: -2rem;
 `;
 
 interface Props {
@@ -47,16 +49,30 @@ export const BasketListItem: React.FC<Props> = ({
   dimensions,
 }) => {
   return (
-    <ListItemContainer
+    <BasketListItemContainer
       index={index}
       width="100%"
-      horizontalMargin="5rem"
+      horizontalmargin="5rem"
       className={title}
     >
       <ListItemPhotoWrap width="30%">
-        <ListItemPhoto fluid={image.fluid} alt={`${title} print image`} />
+        <ListItemPhoto
+          fluid={image.fluid}
+          alt={`${title} print image`}
+          style={{
+            height: "auto",
+            width: "100%",
+          }}
+        />
       </ListItemPhotoWrap>
       <MetaInfoContainer index={index} width="40%">
+        <RemoveFromCartButton
+          onClick={() => removeFromBasket(id)}
+          name="Remove from basket"
+          type="button"
+        >
+          X
+        </RemoveFromCartButton>
         <ListItemTitle>{title}</ListItemTitle>
         <ListItemSubtitle>{dimensions}</ListItemSubtitle>
         <ListItemSubtitle>{`£${price}`}</ListItemSubtitle>
@@ -66,14 +82,7 @@ export const BasketListItem: React.FC<Props> = ({
           outOfStock={false}
           quantity={quantity}
         />
-        <RemoveFromCartButton
-          onClick={() => removeFromBasket(id)}
-          name="Remove from basket"
-          type="button"
-        >
-          X
-        </RemoveFromCartButton>
       </MetaInfoContainer>
-    </ListItemContainer>
+    </BasketListItemContainer>
   );
 };

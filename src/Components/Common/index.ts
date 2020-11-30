@@ -6,6 +6,7 @@ import {
   MetaInfoContainer,
   ListItemSubtitle,
   ListItemPhotoWrap,
+  BasketListItemContainer,
   Photo as ListItemPhoto,
   ListItemTitle,
 } from "./ListComponents";
@@ -15,6 +16,7 @@ import SmallLogo from "./SmallLogo";
 
 export {
   AddToBasketButton,
+  BasketListItemContainer,
   CTAButton,
   ErrorText,
   InfoSection,

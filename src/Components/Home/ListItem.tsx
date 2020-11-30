@@ -34,14 +34,13 @@ export const ListItem: React.FC<ListItemProps> = ({
   id,
   price,
   slug,
-  addToBasket,
   dimensions,
 }) => {
   return (
     <ListItemContainer
       index={index}
       width="100%"
-      horizontalMargin="0"
+      horizontalmargin="0"
       className={title}
       to={`prints/${slug}`}
     >
@@ -62,7 +61,6 @@ export const ListItem: React.FC<ListItemProps> = ({
       </MetaInfoContainer>
       <ButtonContainer onClick={(e) => e.stopPropagation()}>
         <AddToBasketButton id={id} inventory={5}></AddToBasketButton>
-        {/* <QuantityPanel> </QuantityPanel> */}
       </ButtonContainer>
     </ListItemContainer>
   );

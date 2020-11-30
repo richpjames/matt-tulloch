@@ -1,25 +1,47 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { navigate } from "@reach/router";
 import Image from "gatsby-image";
+import { Link } from "gatsby";
 
 import { background, text } from "../../constants";
 
 interface ListItemContainerProps {
   index: number;
   width: string;
-  horizontalMargin: string;
-  to?: string;
+  horizontalmargin: string;
+  to: string;
   className?: string;
 }
 
-export const ListItemContainerWrap = styled.div<ListItemContainerProps>`
+export const ListItemContainerWrap = styled(Link)<ListItemContainerProps>`
   display: flex;
   width: ${(props) => props.width};
-  margin-left: ${(props) => props.horizontalMargin};
-  margin-right: ${(props) => props.horizontalMargin};
+  margin-left: ${(props) => props.horizontalmargin};
+  margin-right: ${(props) => props.horizontalmargin};
   border-top: 0.25rem solid ${text};
-  /* border-bottom: 0.25rem solid ${text}; */
+  padding: 2rem;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+  }
+`;
+interface BasketListItemContainerProps {
+  index: number;
+  width: string;
+  horizontalmargin: string;
+  className?: string;
+}
+
+export const BasketListItemContainer = styled.div<BasketListItemContainerProps>`
+  display: flex;
+  width: ${(props) => props.width};
+  margin-left: ${(props) => props.horizontalmargin};
+  margin-right: ${(props) => props.horizontalmargin};
+  border-top: 0.25rem solid ${text};
   padding: 2rem;
   @media only screen and (max-width: 600px) {
     flex-direction: column;
@@ -36,23 +58,13 @@ export const ListItemContainer: React.FC<ListItemContainerProps> = ({
   children,
   ...rest
 }) => (
-  <ListItemContainerWrap
-    onClick={
-      to
-        ? () => {
-            navigate(to);
-          }
-        : undefined
-    }
-    {...rest}
-  >
+  <ListItemContainerWrap to={to} {...rest}>
     {children}
   </ListItemContainerWrap>
 );
 export const MetaInfoContainer = styled.div<{ index: number; width: string }>`
   display: flex;
   flex-direction: column;
-  align-items: center;
   width: ${(props) => props.width};
   position: relative;
   @media only screen and (max-width: 600px) {
