@@ -31,7 +31,6 @@
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
     "react-image-lightbox": "^5.1.1",
-    "react-mouse-particles": "^1.1.2",
     "reset-css": "^5.0.1",
     "stripe": "^8.89.0",
     "styled-components": "^4.4.1",

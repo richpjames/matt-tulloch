@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components/macro";
 import { useStaticQuery, graphql } from "gatsby";
-import MouseParticles from "react-mouse-particles";
 import BackgroundImage from "gatsby-background-image";
 
 import { useSiteMetadata } from "../hooks/use-sitemetadata";
@@ -52,8 +51,7 @@ export const Layout: React.FC = ({ children }) => {
             <meta name="description" content={description} />
           </Helmet>
           <main>
-            <MouseParticles num={50} g={25} radius={1} v={20} color="#f5edae" />
-            <Header />0
+            <Header />
             <BackgroundImage
               fluid={image.sharp.fluid}
               Tag="section"
