@@ -59,7 +59,12 @@ export const ListItem: React.FC<ListItemProps> = ({
         <ListItemSubtitle>{dimensions}</ListItemSubtitle>
         <ListItemSubtitle>{`£${price}`}</ListItemSubtitle>
       </MetaInfoContainer>
-      <ButtonContainer onClick={(e) => e.stopPropagation()}>
+      <ButtonContainer
+        onClick={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
+        }}
+      >
         <AddToBasketButton id={id} inventory={5}></AddToBasketButton>
       </ButtonContainer>
     </ListItemContainer>
