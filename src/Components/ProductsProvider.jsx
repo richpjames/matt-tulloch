@@ -32,7 +32,7 @@ const Provider = ({ data, children }) => {
         products,
         productsById,
         listProducts: (sortFn) => {
-          const fn = sortFn || ((a, b) => b.price - a.price);
+          const fn = sortFn || ((a, b) => a.order - b.order);
           return Object.values(products).sort(fn);
         },
       }}
@@ -62,6 +62,7 @@ const processGatsbyData = (data) => {
       inventory,
       dimensions,
       slug,
+      order,
     } = productData;
     const id =
       process.env.GATSBY_ENV === "production" ? prodPriceId : devPriceId;
@@ -84,6 +85,7 @@ const processGatsbyData = (data) => {
       image,
       photo,
       id,
+      order,
     };
 
     products.push(product);
@@ -103,6 +105,7 @@ const skusQuery = graphql`
         inventory
         slug
         dimensions
+        order
       }
     }
     allImageSharp {

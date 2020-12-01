@@ -20,8 +20,9 @@ const GridWrapper = styled.div`
 `;
 
 export const ProductGrid = () => {
-  const { products } = useContext(ProductsContext);
+  const { listProducts } = useContext(ProductsContext);
   const { add } = useContext(CartContext);
+  const products = listProducts();
   return (
     <GridWrapper>
       {products.map(
