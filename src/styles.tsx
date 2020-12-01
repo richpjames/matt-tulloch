@@ -21,7 +21,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: var(--main-bg-colour);
-    cursor: pointer;
+    cursor: url(${process.env.URL}/pointer.cur) 2 2, pointer;
 }
 
 h1 {
@@ -62,6 +62,11 @@ a {
     color: var(--text-color);
     text-decoration: none;
     font-size: clamp(12px, 1rem, 1.2rem);
+    cursor: url(${process.env.URL}/pointer.cur) 2 2, pointer;
+}
+
+button { 
+    cursor: url(${process.env.URL}/pointer.cur) 1 1, pointer;
 }
 
 ul {
