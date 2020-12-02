@@ -35,6 +35,7 @@ export const CheckoutSection: React.FC<Props> = ({
       price: sku.id,
       quantity: `${quantity}`,
     }));
+    lineItems.push({ price: shipping.priceId, quantity: "1" });
 
     const stripePromise = loadStripe(stripePublishableKey || "");
 
