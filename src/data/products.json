@@ -23,7 +23,7 @@
     "prodPriceId": "price_1HlLDcI7nlRkVz3TgZIq5PXb",
     "dimensions": "29cm x 42cm",
     "images": ["crossland-bikes-image.jpg", "crossland-bikes-photo.jpg"],
-    "order": 5
+    "order": 3
   },
   {
     "title": "Sister Apology",
@@ -49,7 +49,7 @@
     "prodPriceId": "price_1HlL2NI7nlRkVz3T0nj1o4Bm",
     "dimensions": "29cm x 29cm",
     "images": ["please-hold-image.jpg", "please-hold-photo.jpg"],
-    "order": 3
+    "order": 4
   },
   {
     "title": "Rivington Pike",
@@ -60,7 +60,7 @@
     "inventory": 20,
     "devPriceId": "price_1HqNVdI7nlRkVz3T1ZJMUEOK",
     "prodPriceId": "price_1HqOUmI7nlRkVz3TrgUrXvWF",
-    "dimensions": "29cm x 42cm",
+    "dimensions": "22cm x 42cm",
     "images": ["rivington-pike-image.jpg", "rivington-pike-photo.jpg"],
     "order": 5
   },
