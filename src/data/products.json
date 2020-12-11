@@ -7,6 +7,7 @@
     "slug": "catnipped",
     "inventory": 20,
     "prodPriceId": "price_1Htup1I7nlRkVz3ToZDtOLAm",
+    "status": "available",
     "devPriceId": "price_1HoEjCI7nlRkVz3TLVys9OIx",
     "dimensions": "20cm x 42cm",
     "images": ["catnipped-image.jpg", "catnipped-photo.jpg"],
@@ -14,13 +15,14 @@
   },
   {
     "title": "Crossland Bikes",
-    "blurb": "Heavyweight print on 300gsm white recycled board<br />A premium recycled finish with a textured look",
+    "blurb": "Heavyweight print on 300gsm white recycled board<br />A premium recycled finish with a textured look<br />Pre-order - will arrive early 2021",
     "id": "A2",
     "price": "15",
     "slug": "crossland-bikes",
-    "inventory": 20,
+    "inventory": 0,
     "devPriceId": "price_1HoEiGI7nlRkVz3TkcJsv2M8",
     "prodPriceId": "price_1HlLDcI7nlRkVz3TgZIq5PXb",
+    "status": "preorder",
     "dimensions": "29cm x 42cm",
     "images": ["crossland-bikes-image.jpg", "crossland-bikes-photo.jpg"],
     "order": 3
@@ -34,6 +36,7 @@
     "inventory": 20,
     "devPriceId": "price_1HoEhxI7nlRkVz3TO3ZdAoij",
     "prodPriceId": "price_1HlaF8I7nlRkVz3TLfoj5XZ5",
+    "status": "running-out",
     "dimensions": "29cm x 42cm",
     "images": ["sister-apology-image.jpg", "sister-apology-photo.jpg"],
     "order": 6
@@ -47,6 +50,7 @@
     "inventory": 20,
     "devPriceId": "price_1HoEijI7nlRkVz3TCo5AhyzQ",
     "prodPriceId": "price_1HlL2NI7nlRkVz3T0nj1o4Bm",
+    "status": "available",
     "dimensions": "29cm x 29cm",
     "images": ["please-hold-image.jpg", "please-hold-photo.jpg"],
     "order": 4
@@ -60,6 +64,7 @@
     "inventory": 20,
     "devPriceId": "price_1HqNVdI7nlRkVz3T1ZJMUEOK",
     "prodPriceId": "price_1HqOUmI7nlRkVz3TrgUrXvWF",
+    "status": "available",
     "dimensions": "22cm x 42cm",
     "images": ["rivington-pike-image.jpg", "rivington-pike-photo.jpg"],
     "order": 5
@@ -73,6 +78,7 @@
     "inventory": 20,
     "devPriceId": "price_1Hq18oI7nlRkVz3T2wpXyg9U",
     "prodPriceId": "price_1HqOkSI7nlRkVz3T8SAEVVeQ",
+    "status": "available",
     "dimensions": "14.8 x 14.8cm",
     "images": ["christmas-advert-image.jpg", "christmas-advert-photo.jpg"],
     "order": 2
