@@ -1,26 +1,16 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "types": ["cypress", "@testing-library/cypress", "node"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "noEmit": true,
-    "jsx": "react",
-    "isolatedModules": true
-  },
-  "include": [
-    "src", "cypress"
-  ]
-}
+    "compilerOptions": {
+      "module": "commonjs",
+      "target": "esnext",
+      "jsx": "preserve",
+      "lib": ["dom", "esnext"],
+      "strict": true,
+      "noEmit": true,
+      "isolatedModules": true,
+      "esModuleInterop": true,
+      "noUnusedLocals": false,
+      "allowJs": true,
+      "types": []
+    },
+    "exclude": ["./node_modules", "public", ".cache"]
+  }
