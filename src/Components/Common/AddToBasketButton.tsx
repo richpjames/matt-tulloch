@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import { background, text } from "../../constants";
 import { CartContext } from "../Basket/CartProvider";
 
-const ButtonStyles = styled.button<{
+const Button = styled.button<{
   borderColour?: string;
   backgroundColour: string;
   textColour: string;
@@ -34,28 +34,30 @@ const AddToBasketButton: React.FC<AddToBasketButtonProps> = ({
   const { add, get } = useContext(CartContext);
   const cartQuantity = get(id);
   const inCart = cartQuantity > 0;
-  let backgroundColour = `${text}`;
-  let textColour = `${background}`;
+  const backgroundColour = `${text}`;
+  const textColour = `${background}`;
 
   let buttonMessage = "add to basket";
 
+  const inStock = inventory < 1;
+
   if (inCart) {
     buttonMessage = "in basket";
-  } else if (inventory < 1) {
+  } else if (!inStock) {
     buttonMessage = "pre-order";
   }
 
   return (
     <ButtonWrapper>
-      <ButtonStyles
+      <Button
         onClick={() => add(id)}
-        disabled={false}
         className="add-to-basket"
         backgroundColour={backgroundColour}
         textColour={textColour}
+        disabled={inStock}
       >
         {buttonMessage}
-      </ButtonStyles>
+      </Button>
     </ButtonWrapper>
   );
 };
