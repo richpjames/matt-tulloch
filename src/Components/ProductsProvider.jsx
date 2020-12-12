@@ -63,6 +63,7 @@ const processGatsbyData = (data) => {
       dimensions,
       slug,
       order,
+      status,
     } = productData;
     const id =
       process.env.GATSBY_ENV === "production" ? prodPriceId : devPriceId;
@@ -86,6 +87,7 @@ const processGatsbyData = (data) => {
       photo,
       id,
       order,
+      status,
     };
 
     products.push(product);
@@ -106,6 +108,7 @@ const skusQuery = graphql`
         slug
         dimensions
         order
+        status
       }
     }
     allImageSharp {

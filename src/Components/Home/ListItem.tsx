@@ -25,6 +25,7 @@ interface ListItemProps {
   title: string;
   slug: string;
   dimensions: string;
+  status: stockStatus;
 }
 
 export const ListItem: React.FC<ListItemProps> = ({
@@ -35,6 +36,7 @@ export const ListItem: React.FC<ListItemProps> = ({
   price,
   slug,
   dimensions,
+  status,
 }) => {
   return (
     <ListItemContainer
@@ -65,7 +67,7 @@ export const ListItem: React.FC<ListItemProps> = ({
           e.preventDefault();
         }}
       >
-        <AddToBasketButton id={id} inventory={5}></AddToBasketButton>
+        <AddToBasketButton id={id} inventory={5} status={status} />
       </ButtonContainer>
     </ListItemContainer>
   );

@@ -1,7 +1,5 @@
 import React, { useContext } from "react";
 import styled from "styled-components/macro";
-import { Link } from "gatsby";
-import Image from "gatsby-image";
 
 import { ProductsContext } from "../ProductsProvider";
 import { CartContext } from "../Basket/CartProvider";
@@ -34,10 +32,11 @@ export const ProductGrid = () => {
             dimensions: string;
             price: number;
             id: string;
+            status: stockStatus;
           },
           index: number
         ) => {
-          const { slug, title, id, image, dimensions, price } = product;
+          const { slug, title, id, image, dimensions, price, status } = product;
           return (
             <ListItem
               key={slug}
@@ -48,6 +47,7 @@ export const ProductGrid = () => {
               index={index}
               id={id}
               price={price}
+              status={status}
               addToBasket={() => add(id)}
             />
           );
