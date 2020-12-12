@@ -56,6 +56,7 @@ export const query = graphql`
       dimensions
       title
       inventory
+      status
     }
     images: allFile(filter: { relativePath: { regex: $slugRegex } }) {
       nodes {
@@ -79,6 +80,7 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
     devPriceId,
     blurb,
     inventory,
+    status,
   } = data.productsJson;
   const id = process.env.GATSBY_ENV === "production" ? prodPriceId : devPriceId;
   const { images } = data;
@@ -108,7 +110,7 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
             <p dangerouslySetInnerHTML={{ __html: blurb }}></p>
             <p>{dimensions}</p>
             <p>£{price}</p>
-            <AddToBasketButton id={id} inventory={inventory} />
+            <AddToBasketButton id={id} inventory={inventory} status={status} />
           </InfoSection>
         </PageWrap>
       </Layout>
