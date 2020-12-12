@@ -74,3 +74,10 @@ type sku = {
   dimensions: string;
   image: any;
 };
+
+type stockStatus = "preorder" | "dead" | "available";
+type buttonMessage =
+  | "out of stock"
+  | "in basket"
+  | "pre-order"
+  | "add to basket";
