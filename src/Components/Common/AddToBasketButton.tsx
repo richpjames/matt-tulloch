@@ -25,27 +25,47 @@ const ButtonWrapper = styled.div`
 interface AddToBasketButtonProps {
   id: string;
   inventory: number;
+  status: stockStatus;
 }
 
 const AddToBasketButton: React.FC<AddToBasketButtonProps> = ({
   id,
   inventory,
+  status,
 }) => {
   const { add, get } = useContext(CartContext);
   const cartQuantity = get(id);
-  const inCart = cartQuantity > 0;
   const backgroundColour = `${text}`;
   const textColour = `${background}`;
+  const inCart = cartQuantity > 0;
 
-  let buttonMessage = "add to basket";
+  const assignStockStatus: (status: stockStatus) => buttonMessage = (
+    status
+  ) => {
+    switch (status) {
+      case "available":
+        return "add to basket";
+      case "dead":
+        return "out of stock";
+      case "preorder":
+        return "pre-order";
+      default:
+        return "add to basket";
+    }
+  };
 
-  const inStock = inventory < 1;
+  const cartQuantityMessage: (stockStatus: buttonMessage) => buttonMessage = (
+    stockStatus
+  ) => {
+    const availableToBuy = stockStatus === "add to basket" || "pre-order";
+    if (availableToBuy && inCart) {
+      return "in basket";
+    } else return stockStatus;
+  };
 
-  if (inCart) {
-    buttonMessage = "in basket";
-  } else if (!inStock) {
-    buttonMessage = "pre-order";
-  }
+  const stockStatus = assignStockStatus(status);
+
+  const buttonMessage = cartQuantityMessage(stockStatus);
 
   return (
     <ButtonWrapper>
@@ -54,7 +74,7 @@ const AddToBasketButton: React.FC<AddToBasketButtonProps> = ({
         className="add-to-basket"
         backgroundColour={backgroundColour}
         textColour={textColour}
-        disabled={inStock}
+        disabled={status === "dead"}
       >
         {buttonMessage}
       </Button>
