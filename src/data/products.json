@@ -33,10 +33,10 @@
     "id": "A3",
     "price": "15",
     "slug": "sister-apology",
-    "inventory": 1,
+    "inventory": 0,
     "devPriceId": "price_1HoEhxI7nlRkVz3TO3ZdAoij",
     "prodPriceId": "price_1HlaF8I7nlRkVz3TLfoj5XZ5",
-    "status": "available",
+    "status": "dead",
     "dimensions": "29cm x 42cm",
     "images": ["sister-apology-image.jpg", "sister-apology-photo.jpg"],
     "order": 6
