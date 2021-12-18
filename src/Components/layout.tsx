@@ -49,6 +49,7 @@ export const Layout: React.FC = ({ children }) => {
             <html lang="en" />
             <title>{title}</title>
             <meta name="description" content={description} />
+            <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
           </Helmet>
           <main>
             <Header />
