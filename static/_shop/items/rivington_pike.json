@@ -1,0 +1,14 @@
+{
+  "title": "Rivington Pike",
+  "blurb": "Heavyweight print on 300gsm white recycled board <br />A premium recycled finish with a textured look.",
+  "id": "A5",
+  "price": "15",
+  "slug": "rivington-pike",
+  "inventory": 1,
+  "devPriceId": "price_1HqNVdI7nlRkVz3T1ZJMUEOK",
+  "prodPriceId": "price_1HqOUmI7nlRkVz3TrgUrXvWF",
+  "status": "available",
+  "dimensions": "22cm x 42cm",
+  "images": ["rivington-pike-image.jpg", "rivington-pike-photo.jpg"],
+  "order": 5
+}

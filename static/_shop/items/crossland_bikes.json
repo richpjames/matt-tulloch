@@ -1,0 +1,14 @@
+{
+  "title": "Crossland Bikes",
+  "blurb": "Heavyweight print on 300gsm white recycled board<br />A premium recycled finish with a textured look<br />Pre-order - will arrive early 2021",
+  "id": "A2",
+  "price": "15",
+  "slug": "crossland-bikes",
+  "inventory": 0,
+  "devPriceId": "price_1HoEiGI7nlRkVz3TkcJsv2M8",
+  "prodPriceId": "price_1HlLDcI7nlRkVz3TgZIq5PXb",
+  "status": "preorder",
+  "dimensions": "29cm x 42cm",
+  "images": ["crossland-bikes-image.jpg", "crossland-bikes-photo.jpg"],
+  "order": 3
+}

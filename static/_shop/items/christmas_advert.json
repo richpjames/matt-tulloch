@@ -1,0 +1,14 @@
+{
+  "title": "Christmas Advert",
+  "blurb": "Heavyweight print on 300gsm white recycled board<br />A premium recycled finish with a textured look.",
+  "id": "A6",
+  "price": "5",
+  "slug": "christmas-advert",
+  "inventory": 1,
+  "devPriceId": "price_1Hq18oI7nlRkVz3T2wpXyg9U",
+  "prodPriceId": "price_1HqOkSI7nlRkVz3T8SAEVVeQ",
+  "status": "available",
+  "dimensions": "14.8 x 14.8cm",
+  "images": ["christmas-advert-image.jpg", "christmas-advert-photo.jpg"],
+  "order": 2
+}

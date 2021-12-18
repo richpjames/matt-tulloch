@@ -6,11 +6,13 @@ backend:
 publish_mode: editorial_workflow
 media_folder: "static/image/uploads" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/uploads"
+site_url: https://tulltulloch.com
+display_url: https://tulltulloch.com
 
 collections:
   - name: "shop_items" # Used in routes, e.g., /admin/collections/blog
     label: "Shop items" # Used in the UI
-    folder: "_posts/shop_items" # The path to the folder where the documents are stored
+    folder: "_shop/items" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
@@ -22,11 +24,11 @@ collections:
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Blurb", name: "blurb", widget: "string" }
-      - { label: "Id", name: "id", widget: "string" }
+      - { label: "Id", name: "id", widget: "string", comment: "EG A6" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Inventory", name: "inventory", widget: "number" }
-      - { label: "Dev price Id", name: "dev_price_id", widget: "string" }
-      - { label: "Prod price Id", name: "prod_price_id", widget: "string" }
+      - { label: "Dev price Id", name: "dev_price_id", widget: "hidden" }
+      - { label: "Prod price Id", name: "prod_price_id", widget: "hidden" }
       - {
           label: "Status",
           name: "status",
@@ -36,3 +38,4 @@ collections:
       - { label: "Dimensions", name: "dimensions", widget: "string" }
       - { label: "Images", name: "images", widget: "list" }
       - { label: "Order", name: "order", widget: "number" }
+    sortable_fields: ["order"]

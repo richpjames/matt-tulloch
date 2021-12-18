@@ -1,0 +1,14 @@
+{
+  "title": "Catnipped",
+  "blurb": "Heavyweight print on high quality 300gsm white recycled board<br />A premium recycled finish with a textured look.",
+  "id": "A1",
+  "price": "15",
+  "slug": "catnipped",
+  "inventory": 1,
+  "prodPriceId": "price_1Htup1I7nlRkVz3ToZDtOLAm",
+  "status": "available",
+  "devPriceId": "price_1HoEjCI7nlRkVz3TLVys9OIx",
+  "dimensions": "20cm x 42cm",
+  "images": ["catnipped-image.jpg", "catnipped-photo.jpg"],
+  "order": 1
+}

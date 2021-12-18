@@ -1,0 +1,14 @@
+{
+  "title": "Please Hold",
+  "blurb": "Heavyweight print on 300gsm white recycled board<br />A premium recycled finish with a textured look.",
+  "id": "A4",
+  "price": "15",
+  "slug": "please-hold",
+  "inventory": 1,
+  "devPriceId": "price_1HoEijI7nlRkVz3TCo5AhyzQ",
+  "prodPriceId": "price_1HlL2NI7nlRkVz3T0nj1o4Bm",
+  "status": "available",
+  "dimensions": "29cm x 29cm",
+  "images": ["please-hold-image.jpg", "please-hold-photo.jpg"],
+  "order": 4
+}
