@@ -12,7 +12,7 @@ display_url: https://tulltulloch.com
 collections:
   - name: "shop_items" # Used in routes, e.g., /admin/collections/blog
     label: "Shop items" # Used in the UI
-    folder: "_shop/items" # The path to the folder where the documents are stored
+    folder: "static/_shop/items" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
