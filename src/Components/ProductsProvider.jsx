@@ -24,7 +24,7 @@ ProductsProvider.propTypes = {
 const Provider = ({ data, children }) => {
   // Load product data from Gatsby store
   const [initialProducts, productsById] = processGatsbyData(data);
-  const [products, setProducts] = useState(initialProducts);
+  const [products] = useState(initialProducts);
 
   return (
     <ProductsContext.Provider
@@ -49,11 +49,11 @@ Provider.propTypes = {
 
 /** Normalize structure of data sourced from Gatsby's GraphQL store */
 const processGatsbyData = (data) => {
-  const { allImageSharp, allProductsJson } = data;
+  const { allImageSharp, allItemsJson } = data;
 
   const products = [];
   const productsById = {};
-  allProductsJson.nodes.forEach((productData) => {
+  allItemsJson.nodes.forEach((productData) => {
     const {
       prodPriceId,
       devPriceId,
@@ -98,7 +98,7 @@ const processGatsbyData = (data) => {
 
 const skusQuery = graphql`
   {
-    allProductsJson {
+    allItemsJson {
       nodes {
         price
         title

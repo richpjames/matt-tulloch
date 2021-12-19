@@ -48,7 +48,7 @@ interface Props extends PageProps {
 
 export const query = graphql`
   query($slug: String!, $slugRegex: String!) {
-    productsJson(slug: { eq: $slug }) {
+    itemsJson(slug: { eq: $slug }) {
       blurb
       devPriceId
       prodPriceId

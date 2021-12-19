@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components/macro";
-// import { useStaticQuery, Link, graphql } from "gatsby";
 
 import { QuantityPanel } from "./QuantityPanel";
 import {

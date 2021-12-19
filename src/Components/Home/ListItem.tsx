@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components/macro";
-import { QuantityPanel } from "../Basket/QuantityPanel";
 
 import {
   ListItemContainer,

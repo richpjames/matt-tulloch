@@ -1,10 +1,9 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const productsQuery = await graphql(`
-    query MyQuery {
-      allProductsJson {
+    query SlugQuery {
+      allItemsJson {
         nodes {
           slug
-          images
         }
       }
     }
@@ -12,7 +11,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   if (productsQuery.errors) {
     reporter.panic("failed to create books slug", productsQuery.errors);
   }
-  const products = productsQuery.data.allProductsJson.nodes;
+  const products = productsQuery.data.allItemsJson.nodes;
   products.forEach((product) => {
     actions.createPage({
       path: `/prints/${product.slug}`,

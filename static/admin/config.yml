@@ -24,7 +24,7 @@ collections:
           default: "shop_item",
         }
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Blurb", name: "blurb", widget: "string" }
+      - { label: "Blurb", name: "blurb", widget: "text" }
       - { label: "Id", name: "id", widget: "string", comment: "EG A6" }
       - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Inventory", name: "inventory", widget: "number" }
