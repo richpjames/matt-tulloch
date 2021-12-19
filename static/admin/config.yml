@@ -4,7 +4,7 @@ backend:
   repo: richpjames/matt-tulloch
 
 publish_mode: editorial_workflow
-media_folder: "static/image/uploads" # Media files will be stored in the repo under images/uploads
+media_folder: "static/img/" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/uploads"
 site_url: https://tulltulloch.com
 display_url: https://tulltulloch.com
@@ -17,6 +17,7 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     extension: json
+    description: items in the shop
     fields: # The fields for each document, usually in front matter
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Blurb", name: "blurb", widget: "text" }
