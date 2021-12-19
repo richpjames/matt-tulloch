@@ -70,7 +70,7 @@ export const query = graphql`
     }
   }
 `;
-const ProductPageTemplate = ({ data }: Props) => {
+export const ProductPageTemplate = ({ data }: any) => {
   const {
     dimensions,
     title,

@@ -20,13 +20,6 @@ module.exports = {
     {
       resolve: "gatsby-source-filesystem",
       options: {
-        name: "json",
-        path: `${__dirname}/src/data/`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
         name: "shop_items",
         path: `${__dirname}/static/_shop/`,
       },
@@ -40,6 +33,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-netlify-cms`,
+      modulePath: `${__dirname}/src/cms/cms.js`,
       options: {
         enableIdentityWidget: true,
       },
