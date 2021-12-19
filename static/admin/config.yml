@@ -8,6 +8,7 @@ media_folder: "static/image/uploads" # Media files will be stored in the repo un
 public_folder: "/images/uploads"
 site_url: https://tulltulloch.com
 display_url: https://tulltulloch.com
+show_preview_links: true
 
 collections:
   - name: "shop_items" # Used in routes, e.g., /admin/collections/blog
@@ -17,12 +18,6 @@ collections:
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     extension: json
     fields: # The fields for each document, usually in front matter
-      - {
-          label: "Layout",
-          name: "layout",
-          widget: "hidden",
-          default: "shop_item",
-        }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Blurb", name: "blurb", widget: "text" }
       - { label: "Id", name: "id", widget: "string", comment: "EG A6" }
