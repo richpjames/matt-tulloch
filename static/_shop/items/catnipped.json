@@ -9,6 +9,6 @@
   "status": "available",
   "devPriceId": "price_1HoEjCI7nlRkVz3TLVys9OIx",
   "dimensions": "20cm x 42cm",
-  "images": ["catnipped-image.jpg", "catnipped-photo.jpg"],
+  "images": ["catnipped-image.jpg"],
   "order": 1
 }

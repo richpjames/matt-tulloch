@@ -5,7 +5,6 @@ import styled from "styled-components/macro";
 import { Layout } from "../Components/layout";
 import {
   AddToBasketButton,
-  Text,
   InfoSection,
   SmallLogo,
 } from "../Components/Common";
@@ -43,7 +42,7 @@ interface Props extends PageProps {
   rightDescription: string;
   id: string;
   imagePath: string;
-  data: { productsJson: any; images: { nodes: any } };
+  data: { itemsJson: any; images: { nodes: any } };
 }
 
 export const query = graphql`
@@ -71,7 +70,7 @@ export const query = graphql`
     }
   }
 `;
-const ProductPageTemplate = ({ data, pageContext }: Props) => {
+const ProductPageTemplate = ({ data }: Props) => {
   const {
     dimensions,
     title,
@@ -81,12 +80,12 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
     blurb,
     inventory,
     status,
-  } = data.productsJson;
+  } = data.itemsJson;
   const id = process.env.GATSBY_ENV === "production" ? prodPriceId : devPriceId;
   const { images } = data;
   const image = images.nodes[0].childImageSharp;
   let width = "55vw";
-  if (image.fluid.aspectRatio <= 1) {
+  if (image?.fluid.aspectRatio <= 1) {
     width = "30rem";
   }
 
@@ -98,7 +97,7 @@ const ProductPageTemplate = ({ data, pageContext }: Props) => {
           <ImagesWrap>
             <ImageWrapper width={width}>
               <GatsbyImage
-                fluid={image.fluid}
+                fluid={image?.fluid}
                 alt={`a photo of ${title} print`}
               />
             </ImageWrapper>

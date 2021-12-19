@@ -35,9 +35,6 @@ export const shippingCosts: Shipping[] =
 export const text = "#f8efc3";
 export const background = "#141315";
 
-//URLS
-export const mainImageUrl = `https://www.monitorbooks.co.uk/img/`;
-
 //IMAGES
 export const productPageImageHeight = "15vw";
 export const productPageImageWidth = "auto";
