@@ -8,7 +8,6 @@ import { useSiteMetadata } from "../hooks/use-sitemetadata";
 
 import { GlobalStyle } from "../styles";
 import CartProvider from "./Basket/CartProvider";
-import { Footer } from "./Global/Footer";
 import { Header } from "./Global/Header";
 import ProductsProvider from "./ProductsProvider";
 
@@ -40,6 +39,7 @@ export const Layout: React.FC = ({ children }) => {
       }
     }
   `);
+
   return (
     <>
       <ProductsProvider>
@@ -65,7 +65,6 @@ export const Layout: React.FC = ({ children }) => {
             />
             <PageWrap>{children}</PageWrap>
           </main>
-          <Footer />
         </CartProvider>
       </ProductsProvider>
     </>

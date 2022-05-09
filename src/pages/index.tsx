@@ -25,7 +25,7 @@ const HeroImage = () => {
 
   return (
     <Image
-      style={{ width: "min(85vw, 550px)" }}
+      style={{ width: "min(85vw, 850px)" }}
       fluid={image.sharp.fluid}
       fadeIn={false}
       alt="company logo"

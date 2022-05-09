@@ -11,18 +11,24 @@ const Nav = styled.nav`
   width: 90%;
   @media only screen and (min-width: 600px) {
     margin-top: 2.5vh;
-    margin-left: 2.5rem;
-    margin-right: 2.5rem;
+    width: 100%;
   }
 `;
 
 const NavLinks = styled.ul`
   display: flex;
-  flex-direction: column;
   list-style: none;
+  flex-direction: column;
   padding-top: 2px;
   margin-top: 2.5vh;
   justify-content: space-between;
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+    width: 100%;
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 const NavItem = styled.li`
@@ -32,8 +38,8 @@ const NavItem = styled.li`
   margin-bottom: 0.6rem;
   display: inline;
   @media only screen and (min-width: 600px) {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 `;
 
@@ -49,6 +55,8 @@ const Basket = styled(Link)`
 `;
 
 export const Header = () => {
+  const isInShop =
+    typeof window !== undefined && !/shop/.test(window.location.href);
   return (
     <HeaderElement>
       <Nav>
@@ -65,16 +73,19 @@ export const Header = () => {
               instagram
             </a>
           </NavItem>
-          {typeof window !== undefined && !/shop/.test(window.location.href) && (
+          {isInShop && (
             <NavItem aria-label="shop" className="shop">
               <a href="/shop">shop</a>
             </NavItem>
           )}
         </NavLinks>
       </Nav>
-      <Basket to="/basket">
-        <BasketIcon />
-      </Basket>
+
+      {!isInShop && (
+        <Basket to="/basket">
+          <BasketIcon />
+        </Basket>
+      )}
     </HeaderElement>
   );
 };
