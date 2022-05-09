@@ -61,7 +61,7 @@ h1, h2, h3, h4,h5, h6, p, ul, a {
 a {
     color: var(--text-color);
     text-decoration: none;
-    font-size: clamp(12px, 1rem, 1.2rem);
+    /* font-size: clamp(12px, 1rem, 1.2rem); */
     cursor: url(${process.env.URL}/pointer.cur) 2 2, pointer;
 }
 

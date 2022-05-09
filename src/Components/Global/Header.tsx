@@ -22,6 +22,7 @@ const NavLinks = styled.ul`
   padding-top: 2px;
   margin-top: 2.5vh;
   justify-content: space-between;
+  font-size: 2rem;
   @media only screen and (min-width: 600px) {
     flex-direction: row;
     width: 100%;
