@@ -1,8 +1,8 @@
 import React from "react";
 import { RouteComponentProps } from "@reach/router";
 
-import { InfoSection, Text } from "../Components/Common";
-import { Layout } from "../Components/layout";
+import { InfoSection, Text } from "../../Components/Common";
+import { Layout } from "../../Components/layout";
 
 const Success: React.FC<RouteComponentProps> = () => {
   return (

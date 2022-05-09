@@ -50,8 +50,8 @@ export const Layout: React.FC = ({ children }) => {
             <title>{title}</title>
             <meta name="description" content={description} />
           </Helmet>
+          <Header />
           <main>
-            <Header />
             <BackgroundImage
               fluid={image.sharp.fluid}
               Tag="section"

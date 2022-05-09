@@ -1,15 +1,44 @@
-import React from "react";
-import BigLogo from "../Components/Global/BigLogo";
-
+import * as React from "react";
+import GatsbyImage from "gatsby-image";
+import { useStaticQuery, graphql } from "gatsby";
+import styled from "styled-components/macro";
 import { Layout } from "../Components/layout";
-import { ProductGrid } from "../Components/Home/ProductGrid";
 
-const MainPage = () => {
+const Image = styled(GatsbyImage)`
+  @media only screen and (max-width: 600px) {
+    margin-top: 2rem;
+  }
+`;
+
+const HeroImage = () => {
+  const { image } = useStaticQuery(graphql`
+    query {
+      image: file(relativePath: { eq: "hero.jpg" }) {
+        sharp: childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <Image
+      style={{ width: "min(85vw, 550px)" }}
+      fluid={image.sharp.fluid}
+      fadeIn={false}
+      alt="company logo"
+    />
+  );
+};
+
+const Index = () => {
   return (
     <Layout>
-      <BigLogo />
-      <ProductGrid />
+      <HeroImage />
     </Layout>
   );
 };
-export default MainPage;
+
+export default Index;
