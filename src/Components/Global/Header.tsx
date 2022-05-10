@@ -56,8 +56,14 @@ const Basket = styled(Link)`
 `;
 
 export const Header = () => {
-  const isInShop =
-    typeof window !== undefined && !/shop/.test(window.location.href);
+  const [href, setHref] = React.useState("");
+
+  React.useEffect(() => {
+    if (typeof window !== undefined) setHref(window.location.href);
+  }, []);
+
+  const isInShop = !/shop/.test(href);
+
   return (
     <HeaderElement>
       <Nav>
