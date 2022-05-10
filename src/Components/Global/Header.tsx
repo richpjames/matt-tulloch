@@ -69,7 +69,7 @@ export const Header = () => {
       <Nav>
         <NavLinks>
           <NavItem aria-label="contact" className="contact">
-            <a href="mailto:hello@tulltulloch.com">contact</a>
+            <a href="mailto:hello@tulltulloch.com">Contact</a>
           </NavItem>
           <NavItem aria-label="instagram" className="instagram">
             <a
@@ -77,12 +77,12 @@ export const Header = () => {
               target="_blank"
               rel="noreferrer"
             >
-              instagram
+              Instagram
             </a>
           </NavItem>
           {isInShop && (
             <NavItem aria-label="shop" className="shop">
-              <a href="/shop">shop</a>
+              <a href="/shop">Shop</a>
             </NavItem>
           )}
         </NavLinks>
