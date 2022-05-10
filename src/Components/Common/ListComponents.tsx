@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import Image from "gatsby-image";
 import { Link } from "gatsby";
 
-import { background, text } from "../../constants";
+import { text } from "../../constants";
 
 interface ListItemContainerProps {
   index: number;
