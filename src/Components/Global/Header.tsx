@@ -8,7 +8,11 @@ const Nav = styled.nav`
   display: flex;
   padding-bottom: 0.5rem;
   padding-left: 0.5rem;
-  width: 90%;
+  width: min(95vw, 850px);
+  margin-top: 4vh;
+  a {
+    color: #f5ee18;
+  }
   @media only screen and (min-width: 600px) {
     margin-top: 2.5vh;
     width: 100%;
@@ -18,24 +22,20 @@ const Nav = styled.nav`
 const NavLinks = styled.ul`
   display: flex;
   list-style: none;
-  flex-direction: column;
   padding-top: 2px;
   margin-top: 2.5vh;
   justify-content: space-between;
-  font-size: 1.5rem;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   @media only screen and (min-width: 600px) {
-    flex-direction: row;
-    width: 100%;
-    max-width: 850px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1.5rem;
   }
 `;
 
 const NavItem = styled.li`
   height: 20px;
-  padding-left: 1rem;
-  padding-right: 1rem;
   margin-bottom: 0.6rem;
   display: inline;
   @media only screen and (min-width: 600px) {

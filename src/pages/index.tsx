@@ -6,7 +6,7 @@ import { Layout } from "../Components/layout";
 
 const Image = styled(GatsbyImage)`
   @media only screen and (max-width: 600px) {
-    margin-top: 2rem;
+    margin-top: 1rem;
   }
 `;
 
@@ -25,7 +25,7 @@ const HeroImage = () => {
 
   return (
     <Image
-      style={{ width: "min(85vw, 850px)" }}
+      style={{ width: "min(95vw, 850px)" }}
       fluid={image.sharp.fluid}
       fadeIn={false}
       alt="company logo"
